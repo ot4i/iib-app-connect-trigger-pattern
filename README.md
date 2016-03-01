@@ -1,8 +1,16 @@
 # iib-to-appconnect-sample
-Example IIB project showing integration with IBM AppConnect
+Example IIB project showing integration with IBM App Connect
 
 ## Introduction
+Here are examples of projects to use in [IBM Integration Bus](http://www.ibm.com/software/products/en/ibm-integration-bus) to integrate with [IBM App Connect](http://info.appconnect.ibmcloud.com/).
+This integration allows systems that IIB can integrate with to be exposed in IBM App Connect using its simple flow editor.
 
+
+Three IIB toolkit projects are provided as part of the repo:
+
+* IIBtoAppConnectWebhookLib - Sample IIB library that contains subflows that can be used to integrate with IBM App Connect.
+* IIBtoAppConnectWebhookLibJava - Sample java project that is used by the subflows in the IIBtoAppConnectWebhookLib library.
+* IIBtoAppConnectWebhookLibTest - Simple example HTTP driven flows that show the IIBtoAppConnectWebhookLib library in use.
 
 
 
