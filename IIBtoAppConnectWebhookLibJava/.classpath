@@ -4,54 +4,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="var" path="JCN_HOME/javacompute.jar"/>
 	<classpathentry kind="var" path="JCN_HOME/jplugin2.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/IBM/WebSphere MQ/java/lib/CL3Export.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/IBM/WebSphere MQ/java/lib/CL3Nonexport.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/IBM/WebSphere MQ/java/lib/com.ibm.mq.axis2.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/IBM/WebSphere MQ/java/lib/com.ibm.mq.commonservices.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/IBM/WebSphere MQ/java/lib/com.ibm.mq.defaultconfig.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/IBM/WebSphere MQ/java/lib/com.ibm.mq.headers.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/IBM/WebSphere MQ/java/lib/com.ibm.mq.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/IBM/WebSphere MQ/java/lib/com.ibm.mq.jmqi.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/IBM/WebSphere MQ/java/lib/com.ibm.mq.jms.Nojndi.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/IBM/WebSphere MQ/java/lib/com.ibm.mq.pcf.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/IBM/WebSphere MQ/java/lib/com.ibm.mq.postcard.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/IBM/WebSphere MQ/java/lib/com.ibm.mq.soap.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/IBM/WebSphere MQ/java/lib/com.ibm.mq.tools.ras.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/IBM/WebSphere MQ/java/lib/com.ibm.mqjms.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/IBM/WebSphere MQ/java/lib/connector.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/IBM/WebSphere MQ/java/lib/dhbcore.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/IBM/WebSphere MQ/java/lib/fscontext.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/IBM/WebSphere MQ/java/lib/jms.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/IBM/WebSphere MQ/java/lib/jndi.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/IBM/WebSphere MQ/java/lib/jta.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/IBM/WebSphere MQ/java/lib/ldap.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/IBM/WebSphere MQ/java/lib/providerutil.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files (x86)/IBM/WebSphere MQ/java/lib/rmm.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/IBM/IIB/10.0.0.3_2/server/classes/bipbroker.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/IBM/IIB/10.0.0.3_2/server/classes/bipobserver.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/IBM/IIB/10.0.0.3_2/server/classes/brokerutil.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/IBM/IIB/10.0.0.3_2/server/classes/cmnCon.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/IBM/IIB/10.0.0.3_2/server/classes/connectors.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/IBM/IIB/10.0.0.3_2/server/classes/deploymgr.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/IBM/IIB/10.0.0.3_2/server/classes/javacompute.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/IBM/IIB/10.0.0.3_2/server/classes/jdbcnodes.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/IBM/IIB/10.0.0.3_2/server/classes/jmsclient.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/IBM/IIB/10.0.0.3_2/server/classes/jplugin2.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/IBM/IIB/10.0.0.3_2/server/classes/jplugininternal.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/IBM/IIB/10.0.0.3_2/server/classes/jruncompute.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/IBM/IIB/10.0.0.3_2/server/classes/ldapSecurityProvider.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/IBM/IIB/10.0.0.3_2/server/classes/Map.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/IBM/IIB/10.0.0.3_2/server/classes/MQTTConnector.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/IBM/IIB/10.0.0.3_2/server/classes/MQTTPolicy.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/IBM/IIB/10.0.0.3_2/server/classes/org.eclipse.paho.client.mqttv3-1.0.0.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/IBM/IIB/10.0.0.3_2/server/classes/p8.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/IBM/IIB/10.0.0.3_2/server/classes/p8api.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/IBM/IIB/10.0.0.3_2/server/classes/phpengine.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/IBM/IIB/10.0.0.3_2/server/classes/resmgrapi.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/IBM/IIB/10.0.0.3_2/server/classes/security.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/IBM/IIB/10.0.0.3_2/server/classes/vfdmftcore.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/IBM/IIB/10.0.0.3_2/common/classes/IntegrationAPI.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/IBM/IIB/10.0.0.3_2/common/classes/jms.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="con" path="com.ibm.etools.mft.uri.classpath.MBProjectReference"/>
 	<classpathentry kind="output" path=""/>

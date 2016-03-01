@@ -1,10 +1,7 @@
 import java.util.HashSet;
 import java.util.Set;
 
-import com.ibm.broker.config.proxy.BrokerProxy;
-import com.ibm.broker.config.proxy.ConfigurableService;
 import com.ibm.broker.javacompute.MbJavaComputeNode;
-import com.ibm.broker.plugin.MbBLOB;
 import com.ibm.broker.plugin.MbElement;
 import com.ibm.broker.plugin.MbException;
 import com.ibm.broker.plugin.MbJSON;
@@ -23,7 +20,7 @@ public class ConvertMessageEventToHTTPPost_StoreWebHookURLV2 extends
 		http.createElementAsLastChild(MbElement.TYPE_NAME_VALUE,"ReplyStatusCode",code);
 	}
 	private void addSubscriptionToTree(MbElement item, WebhookSubscription ws) throws MbException{
-		MbElement id = item.createElementAsLastChild(MbElement.TYPE_NAME,"id",ws.getId());
+		item.createElementAsLastChild(MbElement.TYPE_NAME,"id",ws.getId());
 		MbElement callback = item.createElementAsLastChild(MbElement.TYPE_NAME,"callback",null);
 		callback.createElementAsLastChild(MbElement.TYPE_NAME_VALUE,"url",ws.getCallbackUrl());
 		MbElement events = item.createElementAsLastChild(MbJSON.ARRAY,"event_types",null);
@@ -137,7 +134,6 @@ public class ConvertMessageEventToHTTPPost_StoreWebHookURLV2 extends
 	}
 	public void evaluate(MbMessageAssembly inAssembly) throws MbException {
 		MbOutputTerminal out = getOutputTerminal("out"); 
-		MbOutputTerminal alt = getOutputTerminal("alternate");
 
 		MbMessage outMessage =  new MbMessage();
 		MbMessageAssembly outAssembly = new MbMessageAssembly(inAssembly, outMessage);

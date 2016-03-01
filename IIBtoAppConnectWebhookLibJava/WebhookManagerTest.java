@@ -45,6 +45,7 @@ public class WebhookManagerTest {
 	@Test
 	public void callbackUrlsForEventWhenThereisOneUrlRegisteredForEvent_returnSetOfOneCallbackUrl() {
 		WebhookSubscription ws = wm.subscribeToWebHook("http://localhost:7777/callback", "mySecret",events);
+		assertNotNull(ws);
 		assertEquals(1,wm.numberOfSubscriptions());
 		assertEquals("http://localhost:7777/callback", wm.callbackUrlsForEvent("event1")[0]);
 	}

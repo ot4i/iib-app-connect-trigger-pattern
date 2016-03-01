@@ -9,10 +9,8 @@ public class WebhookManager {
 	String path; 
 	long nextSubId = 1;
 	private Map<Long,WebhookSubscription> mapOfSubscriptions = new HashMap<Long,WebhookSubscription>();
-	private WebhookPersister persister;
 	public WebhookManager(WebhookPersister persister, String path){
 		this.path = path;
-		this.persister = persister;
 	}
 
 	synchronized public WebhookSubscription subscribeToWebHook(String url, String secret, String[] events){
