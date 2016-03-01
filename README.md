@@ -8,14 +8,14 @@ This integration allows systems that IIB can integrate with to be exposed in IBM
 
 Three IIB toolkit projects are provided as part of the repo:
 
-* IIBtoAppConnectWebhookLib - Sample IIB library that contains subflows that can be used to integrate with IBM App Connect.
-* IIBtoAppConnectWebhookLibJava - Sample java project that is used by the subflows in the IIBtoAppConnectWebhookLib library.
-* IIBtoAppConnectWebhookLibTest - Simple example HTTP driven flows that show the IIBtoAppConnectWebhookLib library in use.
+* `IIBtoAppConnectWebhookLib` - Sample IIB library that contains subflows that can be used to integrate with IBM App Connect.
+* `IIBtoAppConnectWebhookLibJava` - Sample java project that is used by the subflows in the `IIBtoAppConnectWebhookLib` library.
+* `IIBtoAppConnectWebhookLibTest` - Simple example HTTP driven flows that show the `IIBtoAppConnectWebhookLib` library in use.
 
 
 
 ## Requirements
-Install and configure [IBM Integration Bus](http://www.ibm.com/software/products/us/en/integration-bus/).
+Install and configure  [IBM Integration Bus](http://www.ibm.com/software/products/en/ibm-integration-bus).
 
 The IIB projects provided have been authored using IIB 10 and will work with any version of IIB from v10 onwards.
 
