@@ -1,8 +1,12 @@
+package com.ibm.broker.appconnect;
 import static org.junit.Assert.*;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import com.ibm.broker.appconnect.WebhookManager;
+import com.ibm.broker.appconnect.WebhookSubscription;
 
 
 public class WebhookManagerTest {
@@ -10,7 +14,7 @@ public class WebhookManagerTest {
 	String[] events;
 	@Before
 	public void setUp() throws Exception {
-		 wm = new WebhookManager(null,"/test/hook");
+		 wm = new WebhookManager("/test/hook");
          events = new String[]{"event1"};
 	}
 
