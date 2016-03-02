@@ -23,6 +23,7 @@ The following topics explain how to use these projects to run the Warehouse samp
 
 ## Requirements
 Install and configure  [IBM Integration Bus](http://www.ibm.com/software/products/en/ibm-integration-bus).
+Or use [IIB on Cloud](http://www.ibm.com/software/products/ibm-integration-bus-on-cloud).
 
 The IIB projects provided have been authored using IIB 10 and will work with any version of IIB from v10 onwards.
 
