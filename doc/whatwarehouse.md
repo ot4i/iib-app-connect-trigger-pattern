@@ -83,7 +83,8 @@ The key parts to the content are the POST URL for the subscriber registration an
     color:
       type:  string
     size:
-      type:  string```
+      type:  string
+```
 
 Once the definition is written then it can be used to create the App Connect App.
 
