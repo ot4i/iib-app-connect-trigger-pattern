@@ -11,7 +11,7 @@ The following IIB toolkit projects are provided as part of this repo:
 * `IIBtoAppConnectWebhookLib` - Sample IIB library that contains subflows that can be used to integrate with IBM App Connect.
 * `IIBtoAppConnectWebhookLibJava` - Sample java project that is used by the subflows in the `IIBtoAppConnectWebhookLib` library.
 * `IIBtoAppConnectWebhookLibTest` - Simple example HTTP driven flows that show the `IIBtoAppConnectWebhookLib` library in use.
-* `NewStockEventToAppConnect` - IIB Application showing a full example of how to use the other projects to integrate between a fictional Warehouse system and App Connect.
+* `WarehouseNewStockEventToAppConnect` - IIB Application showing a full example of how to use the other projects to integrate between a fictional Warehouse system and App Connect.
 
 The following topics explain how to use these projects to run the Warehouse sample and then to construct your own integrations:
 
