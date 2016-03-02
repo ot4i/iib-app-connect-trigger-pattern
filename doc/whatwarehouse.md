@@ -68,8 +68,9 @@ It’s written in Swagger syntax (http://swagger.io) which is in yaml format. Yo
 
 The key parts to the content are the POST URL for the subscriber registration and event data format.
 
-* Webhook subscriber registration: POST /warehouse/stock/hook
-
+* Webhook subscriber registration: 
+```POST /warehouse/stock/hook
+```
 * Event data format:
 ```Product:
   type: object
@@ -90,15 +91,14 @@ Once the definition is written then it can be used to create the App Connect App
 
 ### Adding a new Application in App Connect.
 
-
+Creating the new App Connect App representing the Warehouse integration in IIB is very simple. Log on to the App Connect system and upload the [Warehouse Webhook definition file](./doc/warehousedefinition01.yaml). This will result in a new App that can be used as a source of triggers in a App Connect flow.
 
 
 ### Creating a new flow in App Connect.
 
+Create an App Connect flow that takes the new Warehouse App as the trigger and maps it to one of the other provided Apps. For the sake of trying it out to see it working the Google sheets App is the easiest one to use. Select to create a new row in a Google sheet for each `newStock` trigger. Map across which ever fields you like from the trigger to the sheet. 
 
-
-
-
+If you would like to try thi sout end-to-end take a look at: [How to change the Warehouse sample to use your own end system to integrate with](./doc/modwarehouse.md).
 
 
 ## Reference
