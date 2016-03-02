@@ -5,11 +5,11 @@ Webhooks is a simple notification pattern that works over HTTP. There is no clea
 
 For IIB  to interact with App Connect it will need to be setup to implement a Webhook pattern as described in this document. 
 
-This can be be done using the standard HTTP nodes provided in IIB and an example of how to do this if given in the same repo that contains this document.
+This can be be done using the standard HTTP nodes provided in IIB, and an example of how to do this is given in the same repo that contains this document.
 
 # IIB REST API for providing a Webhook pattern
 
-The IIB API for setting up a callback will be based on a REST model where the REST actions are done against a Webhook URL that is being served by IIB. There will be as many of these Webhook points as a message flow de-veloper (Igor) wants to define. For example, they might choose to have a webhook for /warehouse/stock/hook and another one for /crm/customer/hook. 
+The IIB API for setting up a callback will be based on a REST model where the REST actions are made against a Webhook URL that is being served by IIB. There will be as many of these Webhook points as a message flow developer (Igor) wants to define. For example, they might choose to have a webhook for `/warehouse/stock/hook` and another for `/crm/customer/hook`. 
 
 I will use the term subscribe to mean the act of registering a callback and subscription for the object created by the subscribe action. GihHub call it a hook but that is a little confusing as for me the hook is the thing you attach to. The REST operation will then work as follows:
 
@@ -105,7 +105,7 @@ The callback object has the following fields:
 </table>
 
 
-The mechanism used by GitHub is to HMAC hex digest of the body, using thesecret as the key and then adding the value to the HTTP header. Something like a HTTP field X-Hook-Signature.
+The mechanism used by GitHub is to HMAC hex digest of the body, using the secret as the key and then adding the value to the HTTP header. Something like a HTTP field X-Hook-Signature.
 
 ### Response
 
