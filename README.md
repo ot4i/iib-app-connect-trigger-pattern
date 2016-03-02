@@ -1,5 +1,5 @@
 # iib-to-appconnect-sample
-Example IIB projects showing integration with IBM App Connect
+Example IBM Integration Bus projects showing integration with IBM App Connect
 
 ## Introduction
 Here are examples of projects to use in [IBM Integration Bus](http://www.ibm.com/software/products/en/ibm-integration-bus) to integrate with [IBM App Connect](http://info.appconnect.ibmcloud.com/).
