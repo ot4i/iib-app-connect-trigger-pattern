@@ -1,16 +1,23 @@
 # iib-to-appconnect-sample
-Example IIB project showing integration with IBM App Connect
+Example IIB projects showing integration with IBM App Connect
 
 ## Introduction
 Here are examples of projects to use in [IBM Integration Bus](http://www.ibm.com/software/products/en/ibm-integration-bus) to integrate with [IBM App Connect](http://info.appconnect.ibmcloud.com/).
-This integration allows systems that IIB can integrate with to be exposed in IBM App Connect using its simple flow editor.
+The integration between a fictional Warehouse application and App Connect is used to show how IIB and App Connect can be setup and configured to work together to allow all the sophisticated integration function of IIB to be used within the simple user experience of App Connect.
 
 
-Three IIB toolkit projects are provided as part of the repo:
+The following IIB toolkit projects are provided as part of this repo:
 
 * `IIBtoAppConnectWebhookLib` - Sample IIB library that contains subflows that can be used to integrate with IBM App Connect.
 * `IIBtoAppConnectWebhookLibJava` - Sample java project that is used by the subflows in the `IIBtoAppConnectWebhookLib` library.
 * `IIBtoAppConnectWebhookLibTest` - Simple example HTTP driven flows that show the `IIBtoAppConnectWebhookLib` library in use.
+* `NewStockEventToAppConnect` - IIB Application showing a full example of how to use the other projects to integrate between a fictional Warehouse system and App Connect.
+
+The following topics explain how to use these projects to run the Warehouse sample and then to construct your own integrations:
+
+* [What the Warehouse sample does](./whatwarehouse.md).
+* [How to setup and run the Warehouse sample](./runwarehouse.md).
+* [How to change the Warehouse sample to use your own end system to integrate with](./modwarehouse.md).
 
 
 

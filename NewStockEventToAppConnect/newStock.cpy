@@ -1,0 +1,26 @@
+       01  New-Stock.
+         05 STPRID    PIC X(8).
+         05 STPRNM    PIC X(16).
+         05 STPRDS    PIC X(128).
+         05 STNUMR    PIC X(8).
+         05 STCOLR    PIC X(16).
+         05 STSIZE    PIC X(2).
+         05 STPCTL    PIC X(10).
+         05 STBCTN    PIC X(10).
+         05 STCASN    PIC X(20).
+         05 STBCHN    PIC X(30).
+         05 STBRCD    PIC X(20).
+         05 STCTLN    PIC X(3).
+         05 STPKLN    PIC X(5).
+         05 STORDN    PIC X(10).
+         05 STPAKU    PIC X(11).
+         05 STPAKB    PIC X(7).
+         05 STACWT    PIC X(13).
+         05 STMIS1    PIC X(10).
+         05 STMIS2    PIC X(10).
+         05 STMIS3    PIC X(10).
+         05 STMIS4    PIC X(20).
+         05 STNUM1    PIC X(13).
+         05 STRCEX    PIC X(20).
+         05 STCREX    PIC X(20).
+         05 Column0    PIC X(2).

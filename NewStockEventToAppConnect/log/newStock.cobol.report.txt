@@ -1,0 +1,44 @@
+
+
+Importing file: C:\a\e\firefly\iib_to_firefly_webhook\NewStockEventToWebhook\newStock.cpy
+
+Import options for COBOL: 
+		CODEPAGE=ISO-8859-1
+		ENDIAN=Little
+		EXTENSION_CBL=FP
+		EXTENSION_CCP=FP
+		EXTENSION_COB=FP
+		EXTENSION_CPY=DS
+		EXT_DECIMAL_SIGN=ASCII
+		FLOATING_POINT_FORMAT=0
+		NSYMBOL=NATIONAL
+		NUMPROC=PFD
+		PLATFORM_SELECTION=0
+		QUOTE=DOUBLE
+		REMOTE_ENDIAN=Little
+		TRUNC=STD
+		SCHEMA_TARGET_NAMESPACE_URI=null
+		CREATE_DEFAULT_VALUES_FROM_INITIAL_VALUES=true
+		CREATE_FACETS_FROM_LEVEL_88_VALUE_CLAUSES=false
+		PRESERVE_CASE_IN_VARIABLE_NAMES=true
+		CREATE_NULL_VALUES_FOR_FIELDS=false
+		NULL_CHARACTER_FOR_STRING=%SP; 
+		NULL_CHARACTER_FOR_NUMBER=%#r00; 
+		STRING_PADDING_CHARACTER=%SP;
+		NUMBER_PADDING_CHARACTER=0
+		DEFAULT_FOR_STRING= 
+		DEFAULT_FOR_NUMBER=0
+
+Creating global element for COBOL structure "New-Stock"
+Creating global element "NewStock" from type "NewStock"
+Creating message "NewStock" from global element "NewStock"
+Setting Padding Character for elements of type String  "%SP;"
+Setting Padding Character for elements of type Number  "0"
+
+Elapsed time processing this DFDL schema file: 1.172 seconds
+Number of warnings for this DFDL schema file: 0
+
+
+Number of files processed: 1
+
+

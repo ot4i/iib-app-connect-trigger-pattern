@@ -6,10 +6,10 @@
     <colorGraphic16 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/IIBtoAppConnectWebhookLibTest/icons/full/obj16/WebhookTestFlow1.gif"/>
     <colorGraphic32 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/IIBtoAppConnectWebhookLibTest/icons/full/obj30/WebhookTestFlow1.gif"/>
     <composition>
-      <nodes xmi:type="ComIbmWSInput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_1" location="121,192" URLSpecifier="/webhook/test1" useHTTPS="true" messageDomainProperty="JSON">
+      <nodes xmi:type="ComIbmWSInput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_1" location="121,192" URLSpecifier="/webhook/test1" messageDomainProperty="JSON">
         <translation xmi:type="utility:ConstantString" string="HTTP Input: test1"/>
       </nodes>
-      <nodes xmi:type="ComIbmWSInput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_3" location="118,288" URLSpecifier="/webhook/test2" useHTTPS="true" messageDomainProperty="JSON">
+      <nodes xmi:type="ComIbmWSInput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_3" location="118,288" URLSpecifier="/webhook/test2" messageDomainProperty="JSON">
         <translation xmi:type="utility:ConstantString" string="HTTP Input: test2"/>
       </nodes>
       <nodes xmi:type="ComIbmWSReply.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_5" location="519,188">
