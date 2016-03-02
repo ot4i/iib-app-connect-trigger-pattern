@@ -35,7 +35,7 @@ App Connect should now subscribe with IIB for any available `newStock` events. Y
 
 ## Driving the integration end-to-end
 
-To drive the integration you need to POST an event contained in [purple.txt](./ purple.txt) to the IIB message flow at the path /drive/newstock. For example: 
+To drive the integration you need to POST an event contained in [purple.txt](./purple.txt) to the IIB message flow at the path /drive/newstock. For example: 
 
 `curl -X POST http://localhost:7800/drive/newstock purple.txt`.
 
