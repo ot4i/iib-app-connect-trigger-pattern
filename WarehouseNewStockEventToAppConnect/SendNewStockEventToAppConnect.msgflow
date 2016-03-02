@@ -2,9 +2,9 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ComIbmMSLMapping.msgnode="ComIbmMSLMapping.msgnode" xmlns:ComIbmWSInput.msgnode="ComIbmWSInput.msgnode" xmlns:ComIbmWSReply.msgnode="ComIbmWSReply.msgnode" xmlns:WebhookOutput.subflow="WebhookOutput.subflow" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eflow="http://www.ibm.com/wbi/2005/eflow" xmlns:utility="http://www.ibm.com/wbi/2005/eflow_utility" nsURI="SendNewStockEventToAppConnect.msgflow" nsPrefix="SendNewStockEventToAppConnect.msgflow">
   <eClassifiers xmi:type="eflow:FCMComposite" name="FCMComposite_1">
     <eSuperTypes href="http://www.ibm.com/wbi/2005/eflow#//FCMBlock"/>
-    <translation xmi:type="utility:TranslatableString" key="SendNewStockEventToAppConnect" bundleName="SendNewStockEventToAppConnect" pluginId="NewStockEventToAppConnect"/>
-    <colorGraphic16 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/NewStockEventToAppConnect/icons/full/obj16/SendNewStockEventToAppConnect.gif"/>
-    <colorGraphic32 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/NewStockEventToAppConnect/icons/full/obj30/SendNewStockEventToAppConnect.gif"/>
+    <translation xmi:type="utility:TranslatableString" key="SendNewStockEventToAppConnect" bundleName="SendNewStockEventToAppConnect" pluginId="WarehouseNewStockEventToAppConnect"/>
+    <colorGraphic16 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/WarehouseNewStockEventToAppConnect/icons/full/obj16/SendNewStockEventToAppConnect.gif"/>
+    <colorGraphic32 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/WarehouseNewStockEventToAppConnect/icons/full/obj30/SendNewStockEventToAppConnect.gif"/>
     <composition>
       <nodes xmi:type="WebhookOutput.subflow:FCMComposite_1" xmi:id="FCMComposite_1_7" location="540,29" EventType="newStock" WebhookBase="/user01/warehouse/stock/hook" WebhookStar="/user01/warehouse/stock/hook/*">
         <translation xmi:type="utility:ConstantString" string="Send to App Connect (Webhook)"/>
@@ -15,7 +15,7 @@
       <nodes xmi:type="ComIbmMSLMapping.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_9" location="240,63" mappingExpression="msl://{default}#ConvertMessageEventToWebhookEvent_Map_Cobol_to_webhook_event">
         <translation xmi:type="utility:ConstantString" string="Map to from newStock cobol to AppConnect event"/>
       </nodes>
-      <nodes xmi:type="ComIbmWSInput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_10" location="47,31" URLSpecifier="/test/newstock" messageDomainProperty="DFDL" messageTypeProperty="{}:NewStock">
+      <nodes xmi:type="ComIbmWSInput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_10" location="47,31" URLSpecifier="/drive/newstock" messageDomainProperty="DFDL" messageTypeProperty="{}:NewStock">
         <translation xmi:type="utility:ConstantString" string="Recieve newStock event"/>
       </nodes>
       <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_1" targetNode="FCMComposite_1_7" sourceNode="FCMComposite_1_9" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Input"/>

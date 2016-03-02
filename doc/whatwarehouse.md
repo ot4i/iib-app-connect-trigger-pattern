@@ -98,7 +98,7 @@ Creating the new App Connect App representing the Warehouse integration in IIB i
 
 Create an App Connect flow that takes the new Warehouse App as the trigger and maps it to one of the other provided Apps. For the sake of trying it out to see it working the Google sheets App is the easiest one to use. Select to create a new row in a Google sheet for each `newStock` trigger. Map across which ever fields you like from the trigger to the sheet. 
 
-If you would like to try thi sout end-to-end take a look at: [How to change the Warehouse sample to use your own end system to integrate with](./doc/modwarehouse.md).
+If you would like to try thi sout end-to-end take a look at: [How to setup and run the Warehouse sample](./runwarehouse.md).
 
 
 ## Reference
