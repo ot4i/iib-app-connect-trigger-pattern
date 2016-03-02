@@ -15,9 +15,9 @@ The following IIB toolkit projects are provided as part of this repo:
 
 The following topics explain how to use these projects to run the Warehouse sample and then to construct your own integrations:
 
-* [What the Warehouse sample does](./whatwarehouse.md).
-* [How to setup and run the Warehouse sample](./runwarehouse.md).
-* [How to change the Warehouse sample to use your own end system to integrate with](./modwarehouse.md).
+* [What the Warehouse sample does](./doc/whatwarehouse.md).
+* [How to setup and run the Warehouse sample](./doc/runwarehouse.md).
+* [How to change the Warehouse sample to use your own end system to integrate with](./doc/modwarehouse.md).
 
 
 
