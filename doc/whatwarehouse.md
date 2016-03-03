@@ -55,7 +55,7 @@ There is no need to worry about the exact details of the sub flow (unless you wa
 
 * EventType - the name of the event that will be sent to App Connect. In the case of the Warehouse sample this is `newStock`.
 * WebhookBaseUrl - the URL that is used to register for events from this webhook. It is NOT the url that is actually called to send the event but instead the URL to POST the callback URL to.
-* WebhookStarUrl - must be identical to WebhookBaseUrl except suffixed by a *. This is only required due to a limitation in how properties are promoted from a sub flow.
+* WebhookStarUrl - must be identical to WebhookBaseUrl except suffixed by `/*`. This is only required due to a limitation in how properties are promoted from a sub flow.
 
 The last node in the flow is a HTTPReply node and is there to send a reply back to the original HTTP request in the flow.
 
