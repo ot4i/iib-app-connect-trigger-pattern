@@ -1,39 +1,56 @@
 /**
- * Source File Name: %w%
+ * (C) Copyright IBM Corporation 2016
  * 
- * Description:
+ * Unit tests for the IIB sample webhook library, which is an IBM Integration Bus flow library 
+ * which can be used to interface from IIB to IBM App Connect.
  * 
- * IBM Confidential
+ * This file contains javascript mocha tests which exercise the IIB sample webhook library
+ * through HTTP calls to a small sample IIB flow which uses the webhook library.
  * 
- * OCO Source Materials.
- * 
- * ProgIds: 5724-J06 5724-J05 5724-J04 5697-J09 5655-M74 5655-M75 5648-C63
- * 
- * (C) Copyright IBM Corporation 2015.
- * 
- * The Source code for this program is not published or otherwise divested of
- * its trade secrets, irrespective of what has been deposited with the U.S.
- * Copyright office.
- * 
- * Version %Z% %I% %W% %E% %U% [%H% %T%]
- * 
+ * To run these tests:
+ * - Load the sample flow and webhook library projects into IIB toolkit
+ * - Deploy IIB Application 'IIBtoAppConnectWebhookLibTest' to an IIB Integration Node
+ * - Edit the global variables below to match your deployment
+ * - Run tests using npm :
+ *     - `npm install` 
+ *     - `npm test`
  */
 
-var assert = require('assert');
-var expect = require('expect');
-var net = require('net');
-// converted https to http now just for ease of testing
-var https = require('https');
-var http = require('http');
-
-var iibHostname = "zu6aui24.ibmintegrationbus.ibmcloud.com";
-var testHostname = "jreeve7.hursley.ibm.com";
-var iibPort = 442;
-var basePath = "/webhook/test/hook";
+var assert  = require('assert');
+var expect  = require('expect');
+var net     = require('net');
+var https   = require('https');
+var http    = require('http');
 var express = require('express');
 
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// Edit the variables below to suit your IIB deployment being testing
+// Default values are suitable for an IIB node running on the same host as the tests.
+//
+
+// hostname of the machine running an IBM Integration Bus node where the sample has been deployed
+var iibHostname = "localhost";
+// http or https listener port for the IBM Integration Bus flows. default is 7800, or use 442 for https with IIB on Cloud
+var iibPort = 7800;
+// protocol for communication with flows in IIB. 'http' or 'https'
+var iibProtocol = http;
+// hostname of the machine running the tests (contacted by flows publishing events).
+// 'localhost' is OK if IIB runs locally, if using IIB on Cloud or other remote IIB this needs to be a routable hostname.
+var testHostname = "localhost";
+
+// webhook configuration URL used in sample IIB flow. Only change if you've edited the webhook library
+var basePath = "/webhook/test/hook";
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// Tests
+//
+
 describe('Test subscribe', function () {
+    
     beforeEach(function (done) {
         //clear out all subscriptions before running test
         makeRequest("DELETE", basePath, undefined, function () {
@@ -55,6 +72,7 @@ describe('Test subscribe', function () {
         });
 
     });
+    
     it('Subscribe to webhook with 1 event should get a subscription id back', function (done) {
         var bodyString = JSON.stringify({
             "callback": {
@@ -72,6 +90,7 @@ describe('Test subscribe', function () {
                 });
 
     });
+    
     it('Subscribe to webhook with empty list of events should get a subscription id back', function (done) {
         var bodyString = JSON.stringify({
             "callback": {
@@ -89,6 +108,7 @@ describe('Test subscribe', function () {
                 });
 
     });
+    
     it('Subscribe to webhook that does not exist should get a 404 error', function (done) {
         var bodyString = JSON.stringify({
             "callback": {
@@ -114,13 +134,13 @@ describe('Test subscribe', function () {
                     expect(statusCode).toBe(400);
                     done();
                 });
-
     });
 });
 
 describe('Test list subscriptions', function () {
+    
     beforeEach(function (done) {
-        //clear out all subscriptions before rnning test
+        //clear out all subscriptions before each test
         makeRequest("DELETE", basePath, undefined, function () {
             done();
         });
@@ -137,7 +157,8 @@ describe('Test list subscriptions', function () {
                     done();
                 });
     });
-    it('List subscription when there are one subscription should get back an array with one element', function (done) {
+    
+    it('List subscription when there is one subscription should get back an array with one element', function (done) {
         var bodyString1 = JSON.stringify({
             "callback": {
                 "url": "http://example.com/test"
@@ -177,8 +198,8 @@ describe('Test list subscriptions', function () {
                             });
                 });
     });
-    it('List subscription on missing webhook should cause 404 (405 for now due to iib bug)', function (done) {
-
+    
+    it('List subscription on missing webhook should cause 404 (405 for now due to IIB behaviour)', function (done) {
         makeRequest("GET", "/path/wrong/url", undefined, function (body, code) {
             expect(code).toEqual(405);
             done();
@@ -187,8 +208,9 @@ describe('Test list subscriptions', function () {
 });
 
 describe('Test delete subscription', function (done) {
+    
     beforeEach(function (done) {
-        //clear out all subscriptions before rnning test
+        //clear out all subscriptions before each test
         makeRequest("DELETE", basePath, undefined, function () {
             done();
         });
@@ -216,6 +238,7 @@ describe('Test delete subscription', function (done) {
         });
 
     });
+    
     it('Delete subscription that does not exist should cause a 404', function (done) {
         makeRequest("delete", basePath + "/16666", undefined, function (body, code) {
             expect(code).toBe(404);
@@ -253,8 +276,9 @@ describe('Test delete subscription', function (done) {
 });
 
 describe('Test get subscription', function (done) {
+    
     beforeEach(function (done) {
-        //clear out all subscriptions before rnning test
+        //clear out all subscriptions before each test
         makeRequest("DELETE", basePath, undefined, function () {
             done();
         });
@@ -278,6 +302,7 @@ describe('Test get subscription', function (done) {
             });
         });
     });
+    
     it('Get subscription that does not exist should get 404', function (done) {
         makeRequest("GET", basePath + "/1010101", undefined, function (body, code) {
             expect(code).toBe(404);
@@ -285,6 +310,7 @@ describe('Test get subscription', function (done) {
         });
     });
 });
+
 describe('Test put subscription', function (done) {
     beforeEach(function (done) {
         //clear out all subscriptions before running test
@@ -319,6 +345,7 @@ describe('Test put subscription', function (done) {
             });
         });
     });
+    
     it('Put subscription that does not exist should get 404', function (done) {
         var bodyString1 = JSON.stringify({
             "callback": {
@@ -331,6 +358,7 @@ describe('Test put subscription', function (done) {
         });
     });
 });
+
 describe('Test receiving callback', function () {
     beforeEach(function (done) {
         //clear out all subscriptions before running test
@@ -428,11 +456,29 @@ describe('Test receiving callback', function () {
     });
 });
 
-//===== helper test functions
 
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// Test helper functions
+//
+
+/**
+ * @param {*} o - value to check for number type
+ * @return true when parameter is a number
+ */
 function isNumber(o) {
     return !isNaN(o - 0) && o !== null && o !== "" && o !== false;
 }
+
+/**
+ * Make a http/https request
+ * @param {string} method - http request method 'GET', 'POST' etc
+ * @param {string} path - http request path
+ * @param {string} body - request body content
+ * @param {function} callback - callback receiving response body and response statuscode
+ */
 function makeRequest(method, path, body, callback) {
     var length = 0;
     if (body != undefined) {
@@ -452,7 +498,7 @@ function makeRequest(method, path, body, callback) {
         headers: headers
     };
 
-    var request = https.request(optionsSubscribe, function (res2) {
+    var request = iibProtocol.request(optionsSubscribe, function (res2) {
         var str = '';
         res2.on('data', function (chunk) {
             str += chunk;
@@ -461,9 +507,9 @@ function makeRequest(method, path, body, callback) {
             callback(str, res2.statusCode);
         });
     });
-    /*request.on("error",function(err){
-    	console.log("http request error: "+err);
-    });*/
+    request.on("error",function(err){
+        console.log("http request error: "+err);
+    });
     if (body != undefined) {
         request.write(body);
     }
