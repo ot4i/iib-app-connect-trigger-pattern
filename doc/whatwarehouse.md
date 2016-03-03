@@ -37,7 +37,7 @@ To get the flow of data form new stock event happening in the Warehouse system t
 * Add a new application to App Connect that represents the Warehouse and provides a list of events with data structures that can trigger a App Connect flow.
 * Create a flow in App connect that uses the new Warehouse app and when triggered by an event from the Warehouse proforms an action on another application (like create a row in Google sheets).
 
-Each if these separate areas will be discussed in turn. Once you are happen with how it all works you can try [deploying and running the Warehouse sample on IIB and App Connect](./runtwarehouse.md).    
+Each if these separate areas will be discussed in turn. Once you are happen with how it all works you can try [deploying and running the Warehouse sample on IIB and App Connect](./runwarehouse.md).    
 
 ### Developing the IIB Message flow.
 Lets take a look at what it actually means to create a message flow that can receive events from a system and then send them to App Connect. The project `WarehouseNewStockEventToAppConnect` contains the simple message flow that is used in the Warehouse sample and has all the essential elements require to acheive this:
