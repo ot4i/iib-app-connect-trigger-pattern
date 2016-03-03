@@ -1,0 +1,370 @@
+swagger: '2.0'
+info:
+  title: Warehouse behaviors
+  description: Definition of Warehouse behaviors produced by and available from IIB
+  version: 1.0.0
+host: localhost:7800
+schemes:
+  - https
+basePath: /
+produces:
+  - application/json
+
+x-hooks: 
+  warehouse:
+    description: Events originating from the Warehouse application
+    x-register-subscription:   warehouseSubscribeOperation
+    x-list-all-subscriptions:  warehouseSubscriptionListOperation
+    x-deregister-subscription: warehouseUnsubscribeOperation
+    x-change-subscription:     warehouseChangeSubscribeOperation
+    x-retrieve-subscription:   warehouseRetrieveSubscribeOperation
+    x-events:
+      newStock:
+        description: 'Notification event for new stock arriving in warehouse'
+        x-eventId: 'warehouseNewStock'
+        parameters:
+            - name: event
+              in: body
+              required: true
+              schema:
+                $ref: '#/definitions/NewStock'
+                
+paths:
+  /warehouse/stock/hook:
+    post:
+      operationId: 'warehouseSubscribeOperation'
+      summary: Create a subscription to webhook for warehouse stock
+      description: |
+        Call this API to create a new subscription on the webhook. Provide a list of events to subscribe for and a HTTP callback URL.
+      parameters:
+        - name: subscription
+          in: body
+          description: Details to subscribe for a callback on a given set of events
+          required: true
+          schema:
+            $ref: '#/definitions/Subscription'
+                        
+      tags:
+        - Webhook
+      responses:
+        '202':
+          description: Details of the subscription created to the webhook
+          schema:
+            $ref: '#/definitions/Subscribe_response'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    get:
+      operationId: 'warehouseSubscriptionListOperation'
+      summary: Get a list of subscriptions on webhook for warehouse stock
+      description: |
+        Call this API to get a list of subscriptions defined for this webhook
+      tags:
+        - Webhook
+      responses:
+        '200':
+          description: Ids of all subscriptions setup for this webhook
+          schema:
+            type: array
+            items: 
+              type: string
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /warehouse/stock/hook/{id}:
+    delete:
+      operationId: 'warehouseUnsubscriptionOperation'
+      summary: Delete a subscription to the webhook for warehouse stock
+      description: |
+        Call this API to delete a subscription call id on the webhook.
+      parameters:
+        - name: id
+          in: path
+          description: Subscription to delete 
+          required: true
+          type: number
+      tags:
+        - Webhook
+      responses:
+        '204':
+          description: Details of the subscription created to the webhook
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    get:
+      operationId: 'warehouseRetrieveSubscribeOperation'
+      summary: Get details of a subscription to webhook
+      description: |
+        Call this API to get details of a subscription for warehouse stock.
+      parameters:
+        - name: id
+          in: path
+          description: Subscription to get 
+          required: true
+          type: number
+      tags:
+        - Webhook
+      responses:
+        '200':
+          description: Details of the subscription created to the webhook
+          schema: 
+            $ref: '#/definitions/Subscription'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'            
+    put:
+      operationId: 'warehouseChangeSubscribeOperation'
+      summary: Change details of a subscription to webhook for warehouse stock
+      description: |
+        Call this API to change details of a subscription.
+      parameters:
+        - name: id
+          in: path
+          description: Subscription to change 
+          required: true
+          type: string
+        - name: subscription
+          in: body
+          description: New subscription details 
+          required: true
+          schema:
+            $ref: '#/definitions/Subscription'
+      tags:
+        - Webhook
+      responses:
+        '204':
+          description: Change successful
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+         
+  /warehouse/stock/{productId}/reservation:   
+    post:
+      operationId: 'createReservationOfStockOperation'
+      summary: Reserve warehouse stock
+      description: |
+        Call this API to reserve stock in Warehouse.
+      parameters:
+        - name: productId
+          in: path
+          description: Product to reserve stock for 
+          required: true
+          type: string
+        - name: body
+          in: body
+          description: New reservation 
+          required: true
+          schema:
+            $ref: '#/definitions/Reservation'
+      tags:
+        - StockReservation
+      responses:
+        '202':
+          description: Details of the reservation
+          schema:
+            $ref: '#/definitions/Reservation_response'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+            
+  /warehouse/stock/{productId}/reservation/{reservationId}:
+    delete:
+      operationId: 'deleteReservationOperation'
+      summary: Delete a reservation to the webhook for warehouse stock
+      description: |
+        Call this API to delete a reservation of stock.
+      parameters:
+        - name: productId
+          in: path
+          description: Reserved product
+          required: true
+          type: number
+        - name: reservationId
+          in: path
+          description: Reservation to delete 
+          required: true
+          type: number
+      tags:
+        - StockReservation
+      responses:
+        '204':
+          description: Reservation deleted
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    get:
+      operationId: 'retrieveReservationOperation'
+      summary: Get details of a stock reservation
+      description: |
+        Call this API to get details of a stock reservation
+      parameters:
+        - name: productId
+          in: path
+          description: Reserved product
+          required: true
+          type: number
+        - name: reservationId
+          in: path
+          description: Reservation to delete 
+          required: true
+          type: number
+      tags:
+        - StockReservation
+      responses:
+        '200':
+          description: Details of the stock reservation
+          schema: 
+            $ref: '#/definitions/Reservation'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'            
+    put:
+      operationId: 'changeReservationOperation'
+      summary: Change details of a stock reservation
+      description: |
+        Call this API to change details of a stock reservation
+      parameters:
+        - name: productId
+          in: path
+          description: Reserved product
+          required: true
+          type: number
+        - name: reservationId
+          in: path
+          description: Reservation to delete 
+          required: true
+          type: number
+        - name: body
+          in: body
+          description: New subscription details 
+          required: true
+          schema:
+            $ref: '#/definitions/Reservation'
+      tags:
+        - StockReservation
+      responses:
+        '204':
+          description: Change successful
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+definitions:
+  Subscription:
+    type: object
+    properties:
+      callback:
+        $ref: '#/definitions/Callback_details'
+        description: 'Details about how to callback when an event occurs'
+      event_types:
+        type: array
+        items:
+          type: string
+          
+  Callback_details:
+    type: object
+    properties:
+      url:
+        type: string
+        description: 'url to callback on'
+      secret:
+        type: string
+        description: 'secret to use in callback'
+      
+  Subscribe_response:
+    type: object
+    properties:
+      id:
+        type: number
+        description: 'Unique identifier representing the subscription to the webhook'
+
+  NewStock:
+    type: object
+    properties:
+      delivery:
+          $ref: '#/definitions/Delivery'
+  OutOfStock:
+    type: object
+    properties:
+      delivery:
+          $ref: '#/definitions/Product'
+        
+  Delivery:
+    type: object
+    properties:
+      location:
+        type:  string
+      product: 
+          $ref: '#/definitions/Product'
+      quantity:
+        type:  integer
+      date:
+        type: string
+        
+  Product:
+    type: object
+    properties:
+      id:
+        type:  string
+      name:
+        type:  string
+      description:
+        type:  string
+      color:
+        type:  string
+      size:
+        type:  string
+        
+  Reservation:
+    type: object
+    properties:
+      productId:
+        type:  string
+      color: 
+        type: string
+      quantity: 
+        type: number
+      expiry: 
+        type: string
+      requester: 
+        $ref: '#/definitions/Requester'
+      deleteWhenExpired: 
+        type: boolean
+
+  Requester:
+    type: object
+    properties:
+      firstName:
+        type:  string
+      lastName: 
+        type: string
+      email: 
+        type: string
+      telephone: 
+        type: string
+        
+  Reservation_response:
+    type: object
+    properties:
+      id:
+        type: number
+        description: 'Unique identifier representing the reservation'
+        
+  Error:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
+      fields:
+        type: string
