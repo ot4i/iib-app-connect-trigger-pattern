@@ -61,7 +61,7 @@ The last node in the flow is a HTTPReply node and is there to send a reply back 
 
 Once the flow is constructed, it can be deployed to a IIB server and is ready to run. Because App Connect registers it's callback URL dynamically there is not linkage been IIB and App Connect until the App Connect part is defined.
 
-To setup App Connect to be able to comunicate with IIB and register with the webhook the IIB flow developer needs to create a document completely defining details of the webhook. The Warehouse sample has a sample of what this document looks like: [Warehouse Webhook definition file](./warehousedefinition01.yaml).
+To setup App Connect to be able to comunicate with IIB and register with the webhook the IIB flow developer needs to create a document completely defining details of the webhook. The Warehouse sample has a sample of what this document looks like: [Warehouse Webhook definition file](./warehousedefinition.yaml).
 
 It’s written in Swagger syntax (http://swagger.io) which is in yaml format. You can review the content in a text editor, or for a better presentation open the online [Swagger editor](http://editor.swagger.io/).
 
@@ -91,7 +91,7 @@ Once the definition is written then it can be used to create the App Connect App
 
 ### Adding a new Application in App Connect.
 
-Creating the new App Connect App representing the Warehouse integration in IIB is very simple. Log on to the App Connect system and upload the [Warehouse Webhook definition file](./warehousedefinition01.yaml). This will result in a new App that can be used as a source of triggers in a App Connect flow.
+Creating the new App Connect App representing the Warehouse integration in IIB is very simple. Log on to the App Connect system and upload the [Warehouse Webhook definition file](./warehousedefinition.yaml). This will result in a new App that can be used as a source of triggers in a App Connect flow.
 
 
 ### Creating a new flow in App Connect.
