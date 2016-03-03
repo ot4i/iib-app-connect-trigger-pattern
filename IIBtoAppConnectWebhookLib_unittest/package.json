@@ -1,0 +1,16 @@
+{
+  "name": "iib-to-appconnect-webhook-unittests",
+  "version": "1.0.0",
+  "description": "mocha tests which exercise the IIB sample webhook library, used in IIB flows to integrate with IBM App Connect",
+  "dependencies": {},
+  "devDependencies": {
+    "expect": "^1.14.0",
+    "express": "^4.13.4",
+    "mocha": "^2.4.5"
+  },
+  "scripts": {
+	"start" : "npm test",
+    "test": "mocha *-test.js"
+  },
+  "license": " EPL-1.0"
+}
