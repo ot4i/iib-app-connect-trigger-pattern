@@ -2,15 +2,15 @@
 A detailed explanation of what the Warehouse sample is showing and how it was constructed.
 
 ## Introduction
-The Warehouse sample show how the integration between a backend on-premises system and another system can be done using App Connect with the help of IIB.
+The Warehouse sample shows how the integration between a backend on-premises system and another system can be done using App Connect with the help of IIB.
 
 Lets first take a look at the use case before diving into the detail.
 
 ## Setting the scene
 
-There is a retail company that has an online store. The inventory for the componay is managed by commercial software to keep track of stock levels of each item that is sold through the online storefront. The IT department uses IBM Integration Bus to keep the inventory system in sync with other systems such as procurement, order fulfillment and shipping.
+There is a retail company that has an online store. The inventory for the company is managed by commercial software to keep track of stock levels of each item that is sold through the online storefront. The IT department uses IBM Integration Bus to keep the inventory system in sync with other systems such as procurement, order fulfilment and shipping.
 
-Now the marketing department wants to organize some campaigns around a few popular items. Because the items are in short supply, inventory has been consistently low. The department wants to engage their customers who have visited the store and searched for these items, but found that they were out of stock.
+Now the marketing department wants to organize some campaigns around a few popular items. Because these items are in short supply, inventory has been consistently low and the department wants to engage their customers who have visited the store and searched for these items, but found that they were out of stock.
 
 So the idea is to send instant notifications to these customers as soon as the inventory application has updated the stock for the items. Because App Connect at the moment only supports a limited number of applications, the Warehouse sample will use Google Sheets as the target action in the place of IBM Silverpop. The goal is to get the newly stocked items to show up in a Google Spreadsheet as a new row. This simulates the API call to IBM Silverpop to notify customers of the stock level update. The flow of data through the system when a new stock item event occurs will be as follows:
 
@@ -25,7 +25,7 @@ So the idea is to send instant notifications to these customers as soon as the i
 
 The messageflow in IBM Integration Bus that mediates from the Warehouse app to App Connect follows a Webhook event source pattern. Webhook is a popular pattern for cloud applications to support external event pub/sub. In a Webhook pattern, the event source publishes a URL for subscribers to register an HTTP POST callback. When the event happens, the event source, which in this scenario is the IIB integration flow for handling stock level updates in the inventory application, will push the event to the subscribers via the callback POST URL. 
 
-The Warehouse sample makes use of a IIB library provided in this package called `IIBtoAppConnectWebhookLib` to construct a well defined webhook REST interface. This is exactly the type of webhook interface that App Connect can integrate with. If you want  to create your own flows that integrate will App Connect then you can use this library `AS IS` or you can create your own flow from scratch that implements the same webhook pattern. The full REST API implemented by the library can be found in: [IIB webhook specification](./IIB_webhook_description.md).
+The Warehouse sample makes use of a IIB library provided in this package called `IIBtoAppConnectWebhookLib` to construct a well defined webhook REST interface. This is exactly the type of webhook interface that App Connect can integrate with. If you want to create your own flows that integrate will App Connect then you can use this library `AS IS` or you can create your own flow from scratch that implements the same webhook pattern. The full REST API implemented by the library can be found in: [IIB webhook specification](./IIB_webhook_description.md).
 
 App connect can not currently interact with any arbitrary implementation of the Webhook pattern so you must write flows that provide this REST interface either explicitly by using the sub flow provided in the IB library `IIBtoAppConnectWebhookLib` or by constructing your own flows with the correct HTTP nodes and logic to provide the exactly the same REST interface.
 
