@@ -6,7 +6,7 @@
     <colorGraphic16 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/WarehouseNewStockEventToAppConnect/icons/full/obj16/SendNewStockEventToAppConnect.gif"/>
     <colorGraphic32 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/WarehouseNewStockEventToAppConnect/icons/full/obj30/SendNewStockEventToAppConnect.gif"/>
     <composition>
-      <nodes xmi:type="WebhookOutput.subflow:FCMComposite_1" xmi:id="FCMComposite_1_7" location="540,29" EventType="newStock" WebhookBase="/user01/warehouse/stock/hook" WebhookStar="/user01/warehouse/stock/hook/*">
+      <nodes xmi:type="WebhookOutput.subflow:FCMComposite_1" xmi:id="FCMComposite_1_7" location="540,29" EventType="newStock" WebhookBaseUrl="/user01/warehouse/stock/hook" WebhookStarUrl="/user01/warehouse/stock/hook/*">
         <translation xmi:type="utility:ConstantString" string="Send to App Connect (Webhook)"/>
       </nodes>
       <nodes xmi:type="ComIbmWSReply.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_8" location="787,47">

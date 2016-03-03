@@ -18,10 +18,10 @@
       <nodes xmi:type="ComIbmWSReply.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_6" location="514,284">
         <translation xmi:type="utility:ConstantString" string="HTTP Reply1"/>
       </nodes>
-      <nodes xmi:type="WebhookOutput.subflow:FCMComposite_1" xmi:id="FCMComposite_1_9" location="250,188" EventType="test1" WebhookBase="/webhook/test/hook" WebhookStar="/webhook/test/hook/*">
+      <nodes xmi:type="WebhookOutput.subflow:FCMComposite_1" xmi:id="FCMComposite_1_9" location="250,188" EventType="test1" WebhookBaseUrl="/webhook/test/hook" WebhookStarUrl="/webhook/test/hook/*">
         <translation xmi:type="utility:ConstantString" string="WebhookOutput test1 event"/>
       </nodes>
-      <nodes xmi:type="WebhookOutput.subflow:FCMComposite_1" xmi:id="FCMComposite_1_10" location="251,284" EventType="test2" WebhookBase="/webhook/test/hook" WebhookStar="/webhook/test/hook/*">
+      <nodes xmi:type="WebhookOutput.subflow:FCMComposite_1" xmi:id="FCMComposite_1_10" location="251,284" EventType="test2" WebhookBaseUrl="/webhook/test/hook" WebhookStarUrl="/webhook/test/hook/*">
         <translation xmi:type="utility:ConstantString" string="WebhookOutput test2 event"/>
       </nodes>
       <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_5" targetNode="FCMComposite_1_9" sourceNode="FCMComposite_1_1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Input"/>

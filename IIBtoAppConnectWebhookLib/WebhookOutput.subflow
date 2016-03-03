@@ -5,10 +5,10 @@
     <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.EventType" name="EventType">
       <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.WebhookBase" name="WebhookBase" lowerBound="1" defaultValueLiteral="/hook">
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.WebhookBaseUrl" name="WebhookBaseUrl" lowerBound="1" defaultValueLiteral="/hook">
       <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.WebhookStar" name="WebhookStar" lowerBound="1" defaultValueLiteral="/hook">
+    <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="Property.WebhookStarUrl" name="WebhookStarUrl" lowerBound="1" defaultValueLiteral="/hook">
       <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
     <translation xmi:type="utility:TranslatableString" key="WebhookOutput" bundleName="WebhookOutput" pluginId="IIBtoAppConnectWebhookLib"/>
@@ -30,11 +30,11 @@
     </composition>
     <propertyOrganizer>
       <propertyDescriptor groupName="Group.Basic" configurable="true" userDefined="true" describedAttribute="Property.EventType">
-        <propertyName xmi:type="utility:TranslatableString" key="Property.EventType" bundleName="WebhookOutput" pluginId="WebhookV3"/>
-        <propertyDescriptor groupName="Group.Basic" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.URLPropertyEditor" configurable="true" describedAttribute="Property.WebhookBase">
-          <propertyName xmi:type="utility:TranslatableString" key="Property.WebhookBase" bundleName="WebhookOutput" pluginId="WebhookV3"/>
-          <propertyDescriptor groupName="Group.Basic" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.URLPropertyEditor" configurable="true" describedAttribute="Property.WebhookStar">
-            <propertyName xmi:type="utility:TranslatableString" key="Property.WebhookStar" bundleName="WebhookOutput" pluginId="WebhookV3"/>
+        <propertyName xmi:type="utility:TranslatableString" key="Property.EventType" bundleName="WebhookOutput" pluginId="IIBtoAppConnectWebhookLib"/>
+        <propertyDescriptor groupName="Group.Basic" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.URLPropertyEditor" configurable="true" describedAttribute="Property.WebhookBaseUrl">
+          <propertyName xmi:type="utility:TranslatableString" key="Property.WebhookBaseUrl" bundleName="WebhookOutput" pluginId="IIBtoAppConnectWebhookLib"/>
+          <propertyDescriptor groupName="Group.Basic" propertyEditor="com.ibm.etools.mft.ibmnodes.editors.URLPropertyEditor" configurable="true" describedAttribute="Property.WebhookStarUrl">
+            <propertyName xmi:type="utility:TranslatableString" key="Property.WebhookStarUrl" bundleName="WebhookOutput" pluginId="IIBtoAppConnectWebhookLib"/>
           </propertyDescriptor>
         </propertyDescriptor>
       </propertyDescriptor>
@@ -42,13 +42,13 @@
     <attributeLinks promotedAttribute="Property.EventType" overriddenNodes="FCMComposite_1_1">
       <overriddenAttribute href="InnerWebhook.subflow#Property.eventType"/>
     </attributeLinks>
-    <attributeLinks promotedAttribute="Property.WebhookBase" overriddenNodes="FCMComposite_1_1">
+    <attributeLinks promotedAttribute="Property.WebhookBaseUrl" overriddenNodes="FCMComposite_1_1">
       <overriddenAttribute href="InnerWebhook.subflow#Property.URLSpecifierBase"/>
     </attributeLinks>
-    <attributeLinks promotedAttribute="Property.WebhookBase" overriddenNodes="FCMComposite_1_1">
+    <attributeLinks promotedAttribute="Property.WebhookBaseUrl" overriddenNodes="FCMComposite_1_1">
       <overriddenAttribute href="InnerWebhook.subflow#Property.webhookUrl"/>
     </attributeLinks>
-    <attributeLinks promotedAttribute="Property.WebhookStar" overriddenNodes="FCMComposite_1_1">
+    <attributeLinks promotedAttribute="Property.WebhookStarUrl" overriddenNodes="FCMComposite_1_1">
       <overriddenAttribute href="InnerWebhook.subflow#Property.URLSpecifierStar"/>
     </attributeLinks>
     <stickyBoard/>
