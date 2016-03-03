@@ -15,13 +15,13 @@ For example, if I wanted to take an event from MQ and send it to App Connect the
 
 I would need to map the structure coming from MQ to a simple JSON structure. The structure coming from MQ could be anything from a simple XML document to a complex EDIFact message. The JSON structure in the map that it is mapped to must have a root element called `JSON` followed by a child element called `Data` that has a child called `eventData`. There needs to be one element beneath the eventData element for each field to send to App Connect. For the warehouse sample there were five fields: id, name, description, size and color. The map for this looks like:
 ![Warehouse IIB Message flow](./warehouse_sample_map.png) 
-The left half of the map is from the incoming data from MQ and the right is the JSON doc to send to App Connect. Your map will contain whatever data you want on the left and right as long as the JSON doc on the left conforms to the basic structure mentioned above.
+The left half of the map is from the incoming data from MQ and the right is the JSON doc to send to App Connect. Your map will contain whatever data you want on the left and right as long as the JSON doc on the right conforms to the basic structure mentioned above.
 
 The webhook subflow needs to directly follow the mapping node and contain three properties you must set:
 
 * EventType - the name of the event that will be sent to App Connect. Use a name that is meaningful for your event like `newCustomer` or `changeAddress`. it will appear as the Trigger name in App Connect.
 * WebhookBaseUrl - the URL that is used to register for events from this webhook. It is NOT the url that is actually called to send the event but instead the URL to POST the callback URL to. The path can be anything you like but ideally would reflect the source of events with /hook added to the end but it is up to you what the exact path is. It does not have to end in /hook. Some examples: /warehouse/stock/hook, /customer/address/hook, /customer or /AB/F5.
-* WebhookStarUrl - must be identical to WebhookBaseUrl except suffixed by a *. This is only required due to a limitation in how properties are promoted from a sub flow.
+* WebhookStarUrl - must be identical to WebhookBaseUrl except suffixed by `/*`. This is only required due to a limitation in how properties are promoted from a sub flow.
 
  Now the flow is constructed, it can be deployed to IIB ready to be used by App Connect. It does not at this point need to know any App Connect details. 
 
@@ -35,11 +35,11 @@ Open the file.
 
 * Replace all instances of the path /warehouse/stock/hook with the path you used on the webhook subflow  WebhookBaseUrl (for example: /customer/address/hook).
 
-* Replace all instances of `warehouse` with you new name (avoiding spaces).
+* Replace all instances of `warehouse` with your new name (avoiding spaces).
 
 * Find the newStock event and change it's details to reflect the new event you are generating. This will involve changing all instances of newStock to the new name and changing the JSON schema used to have the correct fields.
 
-* Find the host entry and replace it with the hostname:port for IIB. The port is not the IIB admin port (normally 4414) but is instead the port used by the message flow (normally 7800). If you want to use HTTP then change https in schemas to http.
+* Find the host entry and replace it with the hostname:port for IIB. The port is not the IIB admin port (normally 4414) but is instead the port used by the message flow (normally 7800). If you want to use unsecured HTTP then change https in schemas to http.
 
 Go through the description in the rest of the file and change them to more meaningful values for you particular system.
 
