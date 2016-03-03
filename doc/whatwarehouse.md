@@ -25,7 +25,7 @@ So the idea is to send instant notifications to these customers as soon as the i
 
 The messageflow in IBM Integration Bus that mediates from the Warehouse app to App Connect follows a Webhook event source pattern. Webhook is a popular pattern for cloud applications to support external event pub/sub. In a Webhook pattern, the event source publishes a URL for subscribers to register an HTTP POST callback. When the event happens, the event source, which in this scenario is the IIB integration flow for handling stock level updates in the inventory application, will push the event to the subscribers via the callback POST URL. 
 
-The Warehouse sample makes use of a IIB library provided in this package called `IIBtoAppConnectWebhookLib` to construct a well defined webhook REST interface. This is exactly the type of webhook interface that App Connect can integrate with. If you want  to create your own flows that integrate will App Connect then you can use this library `AS IS` or you can create your own flow from scratch that implements the same webhook pattern. The full REST API implemented by the library can be found in: [IIB webhook specification](./doc/IIB_webhook_description.md).
+The Warehouse sample makes use of a IIB library provided in this package called `IIBtoAppConnectWebhookLib` to construct a well defined webhook REST interface. This is exactly the type of webhook interface that App Connect can integrate with. If you want  to create your own flows that integrate will App Connect then you can use this library `AS IS` or you can create your own flow from scratch that implements the same webhook pattern. The full REST API implemented by the library can be found in: [IIB webhook specification](./IIB_webhook_description.md).
 
 App connect can not currently interact with any arbitrary implementation of the Webhook pattern so you must write flows that provide this REST interface either explicitly by using the sub flow provided in the IB library `IIBtoAppConnectWebhookLib` or by constructing your own flows with the correct HTTP nodes and logic to provide the exactly the same REST interface.
 
@@ -61,7 +61,7 @@ The last node in the flow is a HTTPReply node and is there to send a reply back 
 
 Once the flow is constructed, it can be deployed to a IIB server and is ready to run. Because App Connect registers it's callback URL dynamically there is not linkage been IIB and App Connect until the App Connect part is defined.
 
-To setup App Connect to be able to comunicate with IIB and register with the webhook the IIB flow developer needs to create a document completely defining details of the webhook. The Warehouse sample has a sample of what this document looks like: [Warehouse Webhook definition file](./doc/warehousedefinition01.yaml).
+To setup App Connect to be able to comunicate with IIB and register with the webhook the IIB flow developer needs to create a document completely defining details of the webhook. The Warehouse sample has a sample of what this document looks like: [Warehouse Webhook definition file](./warehousedefinition01.yaml).
 
 It’s written in Swagger syntax (http://swagger.io) which is in yaml format. You can review the content in a text editor, or for a better presentation open the online [Swagger editor](http://editor.swagger.io/).
 
@@ -91,7 +91,7 @@ Once the definition is written then it can be used to create the App Connect App
 
 ### Adding a new Application in App Connect.
 
-Creating the new App Connect App representing the Warehouse integration in IIB is very simple. Log on to the App Connect system and upload the [Warehouse Webhook definition file](./doc/warehousedefinition01.yaml). This will result in a new App that can be used as a source of triggers in a App Connect flow.
+Creating the new App Connect App representing the Warehouse integration in IIB is very simple. Log on to the App Connect system and upload the [Warehouse Webhook definition file](./warehousedefinition01.yaml). This will result in a new App that can be used as a source of triggers in a App Connect flow.
 
 
 ### Creating a new flow in App Connect.
