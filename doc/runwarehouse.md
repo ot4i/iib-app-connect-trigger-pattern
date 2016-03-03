@@ -36,9 +36,9 @@ App Connect should now subscribe with IIB for any available `newStock` events. Y
 
 ## Driving the integration end-to-end
 
-To drive the integration you need to POST an event contained in [purple.txt](./purple.txt) to the IIB message flow at the path /drive/newstock. For example: 
+To drive the integration you need to POST an event contained in [purple_jumper.txt](./purple_jumper.txt) to the IIB message flow at the path /drive/newstock. For example: 
 
-`curl -X POST http://localhost:7800/drive/newstock purple.txt`.
+`curl -X POST http://localhost:7800/drive/newstock purple_jumper.txt`.
 
 The IIB message flow will then trigger process the newStock request and send it to any one subscribed to the Webhook. In this case that will be App Connect. App connect will recieve the event and trigger it's flow. The trigger data will be mapped to the action data and then executed. For example: updating a Google sheet.
 
