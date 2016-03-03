@@ -17,12 +17,9 @@ For the sample to work App Connect must be able to make direct HTTP calls to IIB
 [IBM App Connect](http://info.appconnect.ibmcloud.com/) only runs in the cloud as there is no on-premises option.
 
 ## Setting up IIB
-<<<<<<< HEAD
-Deploy the bar file provided in the `WarehouseNewStockEventToAppConnect` project called `Warehouse.bar` to an IIB server.
-=======
 Deploy the bar file provided in the `WarehouseNewStockEventToAppConnect` project called [`Warehouse.bar`](../WarehouseNewStockEventToAppConnect/Warehouse.bar) to an IIB server.
->>>>>>> 9e5ba8b6924dd34252efdce6fd37ec045c886df4
-Modify the [Warehouse Webhook definition file](./warehousedefinition.yaml) file using either a text editor, or for a better presentation open the online [Swagger editor](http://editor.swagger.io/). Change the host and port to have the correct values for your IIB system. The HTTP port is usually 7800 and you can chang ethe protocol to HTTPs if you want to.
+
+Modify the [Warehouse Webhook definition file](./warehousedefinition.yaml) file using either a text editor, or for a better presentation open the online [Swagger editor](http://editor.swagger.io/). Change the host and port to have the correct values for your IIB system. The HTTP port is usually 7800 and you can change the protocol to HTTPs if you want to.
 This is all that is required to have the IIB part running and waiting for App Connect to register.
 
 ## Creating a new Warehouse App in App Connect
