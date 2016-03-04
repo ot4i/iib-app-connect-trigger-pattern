@@ -1,46 +1,56 @@
 # How to setup and run the Warehouse sample
-An end-to-end run through of setting up and running the Warehouse sample in IIB and App Connect.
+Steps required to setup and run the Warehouse sample in IIB and App Connect.
 
 ## Introduction
-The Warehouse sample is very easy to setup and run. It shows all the parts in action to allow App Connect to integrate with the vast number of end points IIB can cope with.
+The Warehouse sample is very easy to setup and run. For a detailed explanation of the contents of the sample, see [What the Warehouse sample does](./doc/whatwarehouse.md).
 
-To run the sample requires both a running IIB system and a running App Connect system.
+To run the sample requires an IIB system and App Connect.
 For IIB there are two possibilities:
 
 * Using [IIB on Cloud](http://www.ibm.com/software/products/ibm-integration-bus-on-cloud)
-* Using [IIB installed on premise](http://www.ibm.com/software/products/en/ibm-integration-bus)
+* Using [IIB installed on-premises](http://www.ibm.com/software/products/en/ibm-integration-bus)
 
-If you do not currently have either of these then follow the links given to set up a free system. 
+If you do not currently have access to either of these systems, click the links for information about how to get access. 
 
-For the sample to work App Connect must be able to make direct HTTP calls to IIB. If using the on-premises option it will require the HTTP port in the IIB server to be accessible from the internet.
+For the sample to work, App Connect must be able to make direct HTTP calls to IIB. If you use the on-premises option, the HTTP port in the IIB server must be accessible from the internet.
 
 [IBM App Connect](http://info.appconnect.ibmcloud.com/) only runs in the cloud, there is no on-premises option.
 
 ## Setting up IIB
-Deploy the bar file provided in the `WarehouseNewStockEventToAppConnect` project called [`Warehouse.bar`](../WarehouseNewStockEventToAppConnect/Warehouse.bar) to an IIB server.
+1.  Deploy the BAR file [`Warehouse.bar`](../WarehouseNewStockEventToAppConnect/Warehouse.bar) that is provided in the `WarehouseNewStockEventToAppConnect` project to an IIB server.
 
-Modify the [Warehouse Webhook definition file](./warehousedefinition.yaml) file using either a text editor, or for a better presentation use the online [Swagger editor](http://editor.swagger.io/). Change the host and port to have the correct values for your IIB system. The HTTP port defaults to 7800 and you can change the protocol to HTTPS if you want to.
-This is all that is required to have the IIB part running and waiting for App Connect to register.
+IIB is now running and waiting for App Connect to register.
 
-## Creating a new Warehouse App in App Connect
-Take your modified Warehouse Webhook definition file and use it in App Connect to make a new App. You can call the App whatever you like (for example: Warehouse).
+## Configuring the Webhook definition file
+1.  Make a copy of the [Warehouse Webhook definition file](./warehousedefinition.yaml) file and open the file in either a text editor or, for a better presentation, the online [Swagger editor](http://editor.swagger.io/):
+2.  Change the host and port to have the correct values for your IIB system. The HTTP port defaults to 7800 and you can change the protocol to HTTPS if you want to.
 
-## Create and start a new flow using the App in App Connect
-Now everything is ready in App Connect to create a flow receive the event from IIB and map it to another App. Create a flow in the App Connect UI selecting the new Warehouse App as the trigger and any other App as the action to be done. Google sheets is the most straight forward if you do not have any real system to send the data to.
+The Webhook definition file is ready to be used by App Connect
 
-Once created, turn the flow on.
+## Creating the App Connect 'Warehouse' application
+1.  Log in to App Connect and upload your modified Warehouse Webhook definition file. You can call the application whatever you like (for example: 'Warehouse'). 
 
-App Connect should now subscribe with IIB for any available `newStock` events. You can check this by doing a HTTP get to the Webhook URL running in IIB. For example:
+The 'Warehouse' application is ready to be used as a source application in an App Connect flow. 
+
+## Creating an App Connect flow
+1.	Create a new flow and select the 'Warehouse' application as the first application and Google Sheets as the second application. 
+2.	Select `newStock` as the trigger, and `Create new row` as the action. 
+3.	If you haven't already connected a Google Sheets account to App Connect, click the `Connect` button and provide your account details.
+4.	Select the Google Sheets spreadsheet and worksheet that you want to use as your target. Note: The worksheet must have column names in the first row of the spreadsheet. 
+5.	Map fields from the 'Warehouse' application to columns in the Google Sheets spreadsheet.
+6.	Save your flow and turn it on.
+
+The 'Warehouse' application in App Connect should now subscribe to IIB for any available `newStock` events. You can check this by doing a HTTP GET to the Webhook URL running in IIB. For example, type the following command at a command prompt:
 
 `curl -X GET http://localhost:7800/warehouse/stock/hook`.
 
 ## Driving the integration end-to-end
 
-To drive the integration you need to POST an event contained in [purple_jumper.txt](./purple_jumper.txt) to the IIB message flow at the path /drive/newstock. For example: 
+1.  POST the event that is contained in [purple_jumper.txt](./purple_jumper.txt) to the IIB message flow at the path /drive/newstock. For example, type the following command at a command prompt: 
 
 `curl -X POST http://localhost:7800/drive/newstock purple_jumper.txt`.
 
-The IIB message flow will then trigger process the newStock request and send it to any one subscribed to the Webhook. In this case that will be App Connect. App connect will recieve the event and trigger it's flow. The trigger data will be mapped to the action data and then executed. For example: updating a Google sheet.
+The IIB message flow processes the newStock request and sends it to anyone that is subscribed to the Webhook; in this case, the 'Warehouse' application in App Connect. The application receives the event and triggers the flow. The flow updates the Google Sheets spreadsheet with the fields from the 'Warehouse' application.
 
 
-Now you have the Warehouse sample working why not try modifying it to interact with your own real systems: [How to change the Warehouse sample to use your own end system to integrate with](./modwarehouse.md).
+Now you have the Warehouse sample working why not try modifying it to interact with your own systems; see [How to change the Warehouse sample to integrate with your own backend system](./modwarehouse.md).
