@@ -12,7 +12,7 @@ For IIB there are two possibilities:
 
 If you do not currently have access to either of these systems, click the links for information about how to get access. 
 
-For the sample to work, App Connect must be able to make direct HTTP calls to IIB. If you use the on-premises option, the HTTP port in the IIB server must be accessible from the internet.
+For the sample to work, App Connect must be able to make direct HTTP calls to IIB. If you use the IIB on-premises option, the HTTP port in the IIB server must be accessible from the internet.
 
 [IBM App Connect](http://info.appconnect.ibmcloud.com/) only runs in the cloud, there is no on-premises option.
 
@@ -46,7 +46,7 @@ The 'Warehouse' application in App Connect should now subscribe to IIB for any a
 
 ## Driving the integration end-to-end
 
-1.  POST the event that is contained in [purple_jumper.txt](./purple_jumper.txt) to the IIB message flow at the path /drive/newstock. For example, type the following command at a command prompt: 
+1.  POST the event that is contained in [purple_jumper.txt](./purple_jumper.txt) to the IIB message flow at the path `/drive/newstock`. For example, type the following command at a command prompt: 
 
 `curl -X POST http://localhost:7800/drive/newstock purple_jumper.txt`.
 
