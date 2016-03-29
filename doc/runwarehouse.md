@@ -42,13 +42,13 @@ The 'Warehouse' application is ready to be used as a source application in an Ap
 
 The 'Warehouse' application in App Connect should now subscribe to IIB for any available `newStock` events. You can check this by doing a HTTP GET to the Webhook URL running in IIB. For example, type the following command at a command prompt:
 
-`curl -X GET http://localhost:7800/warehouse/stock/hook`.
+`curl -X GET http://localhost:7800/warehouse/stock/hook`
 
 ## Driving the integration end-to-end
 
 1.  POST the event that is contained in [purple_jumper.txt](./purple_jumper.txt) to the IIB message flow at the path `/drive/newstock`. For example, type the following command at a command prompt: 
 
-`curl -X POST http://localhost:7800/drive/newstock purple_jumper.txt`.
+`curl -X POST http://localhost:7800/drive/newstock --data @purple_jumper.txt`
 
 The IIB message flow processes the newStock request and sends it to anyone that is subscribed to the Webhook; in this case, the 'Warehouse' application in App Connect. The application receives the event and triggers the flow. The flow updates the Google Sheets spreadsheet with the fields from the 'Warehouse' application.
 
