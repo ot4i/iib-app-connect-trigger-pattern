@@ -1,4 +1,4 @@
-# iib-to-appconnect-sample
+# iib-app-connect-trigger-pattern
 Example IBM Integration Bus projects showing integration with IBM App Connect
 
 ## Introduction
