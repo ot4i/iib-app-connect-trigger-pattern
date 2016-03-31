@@ -37,3 +37,6 @@ Copyright 2016 IBM Corp. under the [Eclipse Public license](http://www.eclipse.o
 
 * Author:: John Reeve <jreeve@uk.ibm.com>
 * Author:: Mark Frost <frostmar@uk.ibm.com>
+* Author:: Karen Brent <Karen_Brent@uk.ibm.com>
+
+
