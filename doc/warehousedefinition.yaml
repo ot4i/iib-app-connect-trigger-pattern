@@ -3,9 +3,9 @@ info:
   title: Warehouse behaviors
   description: Definition of Warehouse behaviors produced by and available from IIB
   version: 1.0.0
-host: example.com:443
+host: localhost:7800
 schemes:
-  - https
+  - http
 basePath: /
 produces:
   - application/json
