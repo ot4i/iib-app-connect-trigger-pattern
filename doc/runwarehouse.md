@@ -12,14 +12,12 @@ For IIB there are two possibilities:
 
 If you do not currently have access to either of these systems, click the links for information about how to get access. 
 
-For the sample to work, App Connect must be able to make direct HTTP calls to IIB: 
-* If you use the IIB on-premises option, the HTTP port in the IIB server must be accessible from the internet. You can install the IBM Secure Gateway from within App Connect to enable communication between your on-premises IIB deployment and App Connect.
-* If you use the IIB on Cloud option, you must turn off basic authentication for your application.
+For the sample to work, App Connect must be able to make direct HTTP calls to IIB; the HTTP port in the IIB server must be accessible from the internet. If you use the IIB on-premises option, you can install the IBM Secure Gateway from within App Connect to enable communication between your on-premises IIB server and App Connect.
 
 [IBM App Connect](http://info.appconnect.ibmcloud.com/) only runs in the cloud, there is no on-premises option.
 
 ## Setting up IIB
-1.  Deploy the BAR file [`Warehouse.bar`](../WarehouseNewStockEventToAppConnect/Warehouse.bar) that is provided in the `WarehouseNewStockEventToAppConnect` project to an IIB server.
+1.  Deploy the BAR file [`Warehouse.bar`](../WarehouseNewStockEventToAppConnect/Warehouse.bar) that is provided in the `WarehouseNewStockEventToAppConnect` project to an IIB server. Note: If you deploy the BAR file to IIB on Cloud, you must turn off basic authentication for your application.
 
 IIB is now running and waiting for App Connect to register.
 
