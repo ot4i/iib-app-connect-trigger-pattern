@@ -12,7 +12,9 @@ For IIB there are two possibilities:
 
 If you do not currently have access to either of these systems, click the links for information about how to get access. 
 
-For the sample to work, App Connect must be able to make direct HTTP calls to IIB. If you use the IIB on-premises option, the HTTP port in the IIB server must be accessible from the internet.
+For the sample to work, App Connect must be able to make direct HTTP calls to IIB: 
+* If you use the IIB on-premises option, the HTTP port in the IIB server must be accessible from the internet. You can install the IBM Secure Gateway from within App Connect to enable communication between your on-premises IIB deployment and App Connect.
+* If you use the IIB on Cloud option, you must turn off basic authentication for your application.
 
 [IBM App Connect](http://info.appconnect.ibmcloud.com/) only runs in the cloud, there is no on-premises option.
 
@@ -42,13 +44,23 @@ The 'Warehouse' application is ready to be used as a source application in an Ap
 
 The 'Warehouse' application in App Connect should now subscribe to IIB for any available `newStock` events. You can check this by doing a HTTP GET to the Webhook URL running in IIB. For example, type the following command at a command prompt:
 
-`curl -X GET http://localhost:7800/warehouse/stock/hook`
+`curl -X GET http://localhost:7800/user01/warehouse/stock/hook`
+
+You should get a response similar to the following:
+
+`[{"id":1,"callback":{"url":"https:\/\/webhook-connector-provider-conntest.mybluemix.net\/webhooks\/4c290d9e629b84a5b778e392314ef0f0\/a10953e0-fb1b-11e5-a1d3-8f07ad38ea36\/Events"},"event_types":["newStock"]}]`
+
+If the response is `[]`, The 'warehouse' application has not subscribed to IIB successfully.
 
 ## Driving the integration end-to-end
 
 1.  POST the event that is contained in [purple_jumper.txt](./purple_jumper.txt) to the IIB message flow at the path `/drive/newstock`. For example, type the following command at a command prompt: 
 
 `curl -X POST http://localhost:7800/drive/newstock --data @purple_jumper.txt`
+
+You should get the following response:
+
+`{"id":"4444671","name":"woollen jumper","description":"woollen jumper","size":"12","color":"purple"}`
 
 The IIB message flow processes the newStock request and sends it to anyone that is subscribed to the Webhook; in this case, the 'Warehouse' application in App Connect. The application receives the event and triggers the flow. The flow updates the Google Sheets spreadsheet with the fields from the 'Warehouse' application.
 
