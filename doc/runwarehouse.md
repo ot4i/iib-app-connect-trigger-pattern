@@ -23,7 +23,8 @@ IIB is now running and waiting for App Connect to register.
 
 ## Configuring the Webhook definition file
 1.  Make a copy of the [Warehouse Webhook definition file](./warehousedefinition.yaml) file and open the file in either a text editor or, for a better presentation, the online [Swagger editor](http://editor.swagger.io/):
-2.  Change the host and port to have the correct values for your IIB system. The HTTP port defaults to 7800 and you can change the protocol to HTTPS if you want to.
+2.  For "host", change the host and port to have the correct values for your IIB system. The HTTP port in IIB defaults to 7800. For IIB on Cloud, use the value for "Host" under "Service URLs" in the Integration Details view (no port is required).
+3.  For "schemes", you must change the protocol to HTTPS if using IIB on Cloud or if your IIB system requires it.
 
 The Webhook definition file is ready to be used by App Connect
 
