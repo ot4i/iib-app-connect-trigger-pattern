@@ -10,38 +10,39 @@ For IIB there are two possibilities:
 * Using [IIB on Cloud](http://www.ibm.com/software/products/ibm-integration-bus-on-cloud)
 * Using [IIB installed on-premises](http://www.ibm.com/software/products/en/ibm-integration-bus)
 
-If you do not currently have access to either of these systems, click the links for information about how to get access. 
+If you do not currently have access to either of these systems, click the links for information about how to get access.
 
 For the sample to work, App Connect must be able to make direct HTTP calls to IIB; the HTTP port in the IIB server must be accessible from the internet. If you use the IIB on-premises option, you can install the IBM Secure Gateway from within App Connect to enable communication between your on-premises IIB server and App Connect.
 
-[IBM App Connect](http://info.appconnect.ibmcloud.com/) only runs in the cloud, there is no on-premises option.
+[IBM App Connect](https://www.appconnect.ibmcloud.com/) only runs in the cloud, there is no on-premises option.
 
 ## Setting up IIB
+1. Import all the IIB projects from this repository into your IIB Toolkit workspace. Use the "Import existing projects into workspace" wizard to do this.
 1.  Deploy the BAR file [`Warehouse.bar`](../WarehouseNewStockEventToAppConnect/Warehouse.bar) that is provided in the `WarehouseNewStockEventToAppConnect` project to an IIB server. Note: If you deploy the BAR file to IIB on Cloud, you must turn off basic authentication for your application.
 
 IIB is now running and waiting for App Connect to register.
 
-## Configuring the Webhook definition file
+## Configuring the Application Definition file
 1.  Make a copy of the [Warehouse Webhook definition file](./warehousedefinition.yaml) file and open the file in either a text editor or, for a better presentation, the online [Swagger editor](http://editor.swagger.io/):
 2.  For "host", change the host and port to have the correct values for your IIB system. The HTTP port in IIB defaults to 7800. For IIB on Cloud, use the value for "Host" under "Service URLs" in the Integration Details view (no port is required).
 3.  For "schemes", you must change the protocol to HTTPS if using IIB on Cloud or if your IIB system requires it.
 
-The Webhook definition file is ready to be used by App Connect
+The Application Definition file is now ready to be used by App Connect
 
 ## Creating the App Connect 'Warehouse' application
-1.  Log in to App Connect and upload your modified Warehouse Webhook definition file. You can call the application whatever you like (for example: 'Warehouse'). 
+1.  Log in to App Connect and upload your Application Definition file. You can call the application whatever you like (for example: 'Warehouse').
 
-The 'Warehouse' application is ready to be used as a source application in an App Connect flow. 
+The 'Warehouse' application is ready to be used as a source application in an App Connect flow.
 
 ## Creating an App Connect flow
-1.	Create a new flow and select the 'Warehouse' application as the first application and Google Sheets as the second application. 
-2.	Select `newStock` as the trigger, and `Create new row` as the action. 
+1.	Create a new flow and select the 'Warehouse' application as the first application and Google Sheets as the second application.
+2.	Select `newStock` as the trigger, and `Create new row` as the action.
 3.	If you haven't already connected a Google Sheets account to App Connect, click the `Connect` button and provide your account details.
-4.	Select the Google Sheets spreadsheet and worksheet that you want to use as your target. Note: The worksheet must have column names in the first row of the spreadsheet. 
+4.	Select the Google Sheets spreadsheet and worksheet that you want to use as your target. Note: The worksheet must have column names in the first row of the spreadsheet.
 5.	Map fields from the 'Warehouse' application to columns in the Google Sheets spreadsheet.
 6.	Save your flow and turn it on.
 
-The 'Warehouse' application in App Connect should now subscribe to IIB for any available `newStock` events. You can check this by doing a HTTP GET to the Webhook URL running in IIB. For example, type the following command at a command prompt:
+The 'Warehouse' application in App Connect should now subscribe to IIB for any available `newStock` events. You can check the list of subscribers by doing a REST GET to the Webhook URL running in IIB. For example, type the following command at a command prompt:
 
 `curl -X GET http://localhost:7800/user01/warehouse/stock/hook`
 
@@ -53,11 +54,11 @@ If the response is `[]`, The 'warehouse' application has not subscribed to IIB s
 
 ## Driving the integration end-to-end
 
-1.  POST the event that is contained in [purple_jumper.txt](./purple_jumper.txt) to the IIB message flow at the path `/drive/newstock`. For example, type the following command at a command prompt: 
+POST the event that is contained in [purple_jumper.txt](./purple_jumper.txt) to the IIB message flow at the path `/drive/newstock`. For example, type the following command at a command prompt, or use your favourite REST client:
 
 `curl -X POST http://localhost:7800/drive/newstock --data @purple_jumper.txt`
 
-You should get the following response:
+You should get the following response from the message flow, via the curl command:
 
 `{"id":"4444671","name":"woollen jumper","description":"woollen jumper","size":"12","color":"purple"}`
 
