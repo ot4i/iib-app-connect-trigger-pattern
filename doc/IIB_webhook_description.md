@@ -42,7 +42,7 @@ I will use the term subscribe to mean the act of registering a callback and subs
   <tr>
     <td><tt><b>DELETE</b></tt></td>
     <td>{IIB root}/{hookpath}/{id}/</td>
-    <td>Dekete a subscription</td>
+    <td>Delete a subscription</td>
   </tr>
   
 </table>
