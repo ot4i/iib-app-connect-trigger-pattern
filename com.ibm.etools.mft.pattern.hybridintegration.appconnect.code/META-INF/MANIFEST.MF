@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Pattern Authoring Extension Plug-in
+Bundle-SymbolicName: com.ibm.etools.mft.pattern.hybridintegration.appconnect.code
+Bundle-Version: 1.0.0
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Require-Bundle: com.ibm.etools.mft.broker.runtime;bundle-version="8.0.0",
+ com.ibm.broker.config.appdev;bundle-version="8.0.0"
+Export-Package: com.ibm.etools.mft.pattern.hybridintegration.appconnect.code
