@@ -60,7 +60,7 @@
                 <schema/>
                 <referencedProjects>
                     <referencedProject>
-                        <referencedProjectId>Id15535246b89e32568da03db2bc3</referencedProjectId>
+                        <referencedProjectId>Id1554b6856c4f441d7ec7cf8575f</referencedProjectId>
                         <displayName>IIBtoAppConnectWebhookLib</displayName>
                         <enabled>true</enabled>
                         <customProject>false</customProject>
@@ -103,7 +103,7 @@
                         </folders>
                     </referencedProject>
                     <referencedProject>
-                        <referencedProjectId>Id15535246ba9f679e4629c228844</referencedProjectId>
+                        <referencedProjectId>Id1554b6856f3485e1c759f0c95e2</referencedProjectId>
                         <displayName>IIBtoAppConnectWebhookLibJava</displayName>
                         <enabled>true</enabled>
                         <customProject>false</customProject>
@@ -351,7 +351,7 @@
                         </folders>
                     </referencedProject>
                     <referencedProject>
-                        <referencedProjectId>Id15535246ba96326e24555d8cf33</referencedProjectId>
+                        <referencedProjectId>Id1554b6856f34cffc3bb80959fa8</referencedProjectId>
                         <displayName>IIBtoAppConnectWebhookLibTest</displayName>
                         <enabled>true</enabled>
                         <customProject>false</customProject>
@@ -388,7 +388,7 @@
                         </folders>
                     </referencedProject>
                     <referencedProject>
-                        <referencedProjectId>Id15535246bc8d9e9e3ca7bfca921</referencedProjectId>
+                        <referencedProjectId>Id1554b685702aec6c32580d039</referencedProjectId>
                         <displayName>IIBtoAppConnectWebhookLib_unittest</displayName>
                         <enabled>true</enabled>
                         <customProject>false</customProject>
@@ -458,12 +458,12 @@
                         </folders>
                     </referencedProject>
                     <referencedProject>
-                        <referencedProjectId>Id15535246bc81ccdce9a2d36dbd9</referencedProjectId>
+                        <referencedProjectId>Id1554b6857027d7026ce235c4764</referencedProjectId>
                         <displayName>WarehouseNewStockEventToAppConnect</displayName>
                         <enabled>true</enabled>
                         <customProject>false</customProject>
                         <prefixProjectName>true</prefixProjectName>
-                        <expression></expression>
+                        <expression>pp:getValue(&apos;ppIncludeSample&apos;)=&apos;sample_warehouse&apos;</expression>
                         <referenceId></referenceId>
                         <folders>
                             <folder>
@@ -562,13 +562,90 @@
                         </folders>
                     </referencedProject>
                 </referencedProjects>
-                <groups/>
+                <groups>
+                    <group documentationRequired="true" tableRequired="true">
+                        <groupId>Id155356c35f967434fc3b47a4a77</groupId>
+                        <displayName>Sample</displayName>
+                        <generateDocumentation>true</generateDocumentation>
+                        <description>Pattern Parameters</description>
+                        <expand>false</expand>
+                        <visible>true</visible>
+                        <parameters>
+                            <parameter>
+                                <parameterId>ppIncludeSample</parameterId>
+                                <referenceId>Id155356c5e3351eb794bcf7c50f3</referenceId>
+                                <defaultTranslated>false</defaultTranslated>
+                                <displayName>Include Sample</displayName>
+                                <default>5061747465726E732173616D706C655F6E6F6E65</default>
+                                <waterMark>Enter your parameter value</waterMark>
+                                <mandatory>true</mandatory>
+                                <configurable>true</configurable>
+                                <visible>true</visible>
+                                <expression></expression>
+                                <parameterTargets/>
+                                <schema>
+                                    <maxOccurs>1</maxOccurs>
+                                    <minOccurs>1</minOccurs>
+                                    <type>Id155356d7d80e8e34c40c7bc7dd3</type>
+                                </schema>
+                                <helpText>&lt;p&gt;Describe the parameter here&lt;/p&gt;</helpText>
+                                <continuation>false</continuation>
+                            </parameter>
+                        </parameters>
+                    </group>
+                </groups>
                 <messages/>
                 <patternExtensions>
                     <packageExtensions/>
-                    <generateExtensions/>
+                    <generateExtensions>
+                        <generateExtension>
+                            <extensionId>Id155353ac3aeb70b5d2278a89c45</extensionId>
+                            <extensionClass>com.ibm.etools.mft.pattern.support.java.JavaPatternInstanceTransform</extensionClass>
+                            <extensionConfiguration>
+                                <configuration>
+                                    <key>class</key>
+                                    <value>com.ibm.etools.mft.pattern.hybridintegration.appconnect.code.PatternGenerator</value>
+                                </configuration>
+                                <configuration>
+                                    <key>pluginId</key>
+                                    <value>com.ibm.etools.mft.pattern.hybridintegration.appconnect.code</value>
+                                </configuration>
+                                <configuration>
+                                    <key>relativePath</key>
+                                    <value></value>
+                                </configuration>
+                                <configuration>
+                                    <key>projectName</key>
+                                    <value></value>
+                                </configuration>
+                                <configuration>
+                                    <key>outputPath</key>
+                                    <value></value>
+                                </configuration>
+                            </extensionConfiguration>
+                        </generateExtension>
+                    </generateExtensions>
                 </patternExtensions>
-                <patternLists/>
+                <patternLists>
+                    <patternList>
+                        <listId>Id155356d7d80e8e34c40c7bc7dd3</listId>
+                        <displayName>includeSampleType</displayName>
+                        <systemList>false</systemList>
+                        <patternListItems>
+                            <patternListItem>
+                                <listItemId>Id155356d7d808bf47d0b4fb98624</listItemId>
+                                <displayName>No</displayName>
+                                <value>5061747465726E732173616D706C655F6E6F6E65</value>
+                            </patternListItem>
+                            <patternListItem>
+                                <listItemId>Id155356de2b61d9a60edbfcc91a2</listItemId>
+                                <displayName>Warehouse Sample</displayName>
+                                <value>5061747465726E732173616D706C655F77617265686F757365</value>
+                            </patternListItem>
+                        </patternListItems>
+                        <systemListItems/>
+                    </patternList>
+                </patternLists>
                 <specification>
                     <projectName>IIBtoAppConnectPattern</projectName>
                     <relativePath>Pattern Specification</relativePath>

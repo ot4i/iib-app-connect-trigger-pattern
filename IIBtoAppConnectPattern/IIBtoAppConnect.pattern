@@ -60,7 +60,7 @@
         <schema/>
         <referencedProjects>
           <referencedProject>
-            <referencedProjectId>Id155353b684433a984870f3a1550</referencedProjectId>
+            <referencedProjectId>Id1554b6856c4f441d7ec7cf8575f</referencedProjectId>
             <displayName>IIBtoAppConnectWebhookLib</displayName>
             <enabled>true</enabled>
             <customProject>false</customProject>
@@ -103,7 +103,7 @@
             </folders>
           </referencedProject>
           <referencedProject>
-            <referencedProjectId>Id155353b6863a54c1af83d20b133</referencedProjectId>
+            <referencedProjectId>Id1554b6856f3485e1c759f0c95e2</referencedProjectId>
             <displayName>IIBtoAppConnectWebhookLibJava</displayName>
             <enabled>true</enabled>
             <customProject>false</customProject>
@@ -351,7 +351,7 @@
             </folders>
           </referencedProject>
           <referencedProject>
-            <referencedProjectId>Id155353b686398df220a05f3a374</referencedProjectId>
+            <referencedProjectId>Id1554b6856f34cffc3bb80959fa8</referencedProjectId>
             <displayName>IIBtoAppConnectWebhookLibTest</displayName>
             <enabled>true</enabled>
             <customProject>false</customProject>
@@ -388,7 +388,7 @@
             </folders>
           </referencedProject>
           <referencedProject>
-            <referencedProjectId>Id155353b688352eb5a1af3e724c6</referencedProjectId>
+            <referencedProjectId>Id1554b685702aec6c32580d039</referencedProjectId>
             <displayName>IIBtoAppConnectWebhookLib_unittest</displayName>
             <enabled>true</enabled>
             <customProject>false</customProject>
@@ -458,7 +458,7 @@
             </folders>
           </referencedProject>
           <referencedProject>
-            <referencedProjectId>Id155353b6883fea0ba3a124e2fd3</referencedProjectId>
+            <referencedProjectId>Id1554b6857027d7026ce235c4764</referencedProjectId>
             <displayName>WarehouseNewStockEventToAppConnect</displayName>
             <enabled>true</enabled>
             <customProject>false</customProject>

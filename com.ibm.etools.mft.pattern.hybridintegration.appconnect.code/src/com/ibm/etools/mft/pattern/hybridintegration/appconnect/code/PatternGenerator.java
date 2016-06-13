@@ -11,7 +11,7 @@ public class PatternGenerator implements GeneratePatternInstanceTransform {
 	private static final String SAMPLE_ARTIFACTS_PROJECT_NAME = "HTTP-oneway_sample";
 	
 	// Properties IDs
-	private static final String PROPERTY_INCLUDE_SAMPLE_ID = "includesample";
+	private static final String PROPERTY_INCLUDE_SAMPLE_ID = "ppIncludeSample";
 		
 	private boolean includeSample;
 
