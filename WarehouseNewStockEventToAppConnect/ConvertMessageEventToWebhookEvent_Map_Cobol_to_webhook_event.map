@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?><mappingRoot xmlns="http://www.ibm.com/2008/ccl/Mapping" domainID="com.ibm.msl.mapping.xml" domainIDExtension="mb" mainMap="true" targetNamespace="default" version="8.0.5.0" xmlns:map="default">
-    <inlinedXMLSchema><![CDATA[<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">   
-    <xsd:element name="eventData" nillable="true">   
-    <xsd:complexType>   
-      <xsd:sequence>   
-        <xsd:element name="id" nillable="true" type="xsd:string"/>   
-        <xsd:element name="name" nillable="true" type="xsd:string"/>   
-        <xsd:element name="description" nillable="true" type="xsd:string"/>   
-                                            <xsd:element name="size" nillable="true" type="xsd:string"/>  
-                            <xsd:element name="color" nillable="true" type="xsd:string"/> 
-            </xsd:sequence>   
-    </xsd:complexType>   
-  </xsd:element>   
+    <inlinedXMLSchema><![CDATA[<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">    
+        <xsd:element name="color" nillable="true" type="xsd:string"/> 
+    <xsd:element name="size" nillable="true" type="xsd:string"/> 
+    <xsd:element name="description" nillable="true" type="xsd:string"/> 
+    <xsd:element name="name" nillable="true" type="xsd:string"/> 
+    <xsd:element name="id" nillable="true" type="xsd:string"/>    
 </xsd:schema>]]></inlinedXMLSchema>
     <input inlinedXMLSchema="true" path="../schema_0.xsd" var="var1"/>
     <input path="/newStock.xsd" var="var3"/>
@@ -23,7 +17,11 @@
         <input path="$var3/mb:msg(NewStock,assembly,DFDL,Properties)" var="MessageAssembly"/>
         <output namespace="http://www.ibm.com/iib/msl/json" path="$var/mb:msg(JSON,assembly,JSON,Properties)" var="MessageAssembly1">
             <cast castType="userDefined" path="$MessageAssembly1/JSON/Data/type('anyType')" qualifier="{http://www.ibm.com/iib/msl/json}JSONObject" ref="var"/>
-            <cast castType="userDefined" path="$MessageAssembly1/JSON/spath('Data',2)/any" qualifier="eventData" ref="var1"/>
+            <cast castType="userDefined" path="$MessageAssembly1/JSON/spath('Data',2)/any" qualifier="id" ref="var1"/>
+            <cast castType="userDefined" path="$MessageAssembly1/JSON/spath('Data',2)/any" qualifier="name" ref="var1"/>
+            <cast castType="userDefined" path="$MessageAssembly1/JSON/spath('Data',2)/any" qualifier="description" ref="var1"/>
+            <cast castType="userDefined" path="$MessageAssembly1/JSON/spath('Data',2)/any" qualifier="size" ref="var1"/>
+            <cast castType="userDefined" path="$MessageAssembly1/JSON/spath('Data',2)/any" qualifier="color" ref="var1"/>
         </output>
         <move>
             <input path="$MessageAssembly/Properties"/>
@@ -40,26 +38,26 @@
                 </assign>
             </override>
         </move>
+        <task type="todo"/>
         <move>
             <input path="$MessageAssembly/NewStock/STPRID"/>
-            <output path="$MessageAssembly1/JSON/spath('Data',2)/eventData/id"/>
+            <output path="$MessageAssembly1/JSON/spath('Data',2)/id"/>
         </move>
         <move>
             <input path="$MessageAssembly/NewStock/STPRNM"/>
-            <output path="$MessageAssembly1/JSON/spath('Data',2)/eventData/name"/>
+            <output path="$MessageAssembly1/JSON/spath('Data',2)/name"/>
         </move>
         <move>
             <input path="$MessageAssembly/NewStock/STPRDS"/>
-            <output path="$MessageAssembly1/JSON/spath('Data',2)/eventData/description"/>
+            <output path="$MessageAssembly1/JSON/spath('Data',2)/description"/>
         </move>
-        <task type="todo"/>
         <move>
             <input path="$MessageAssembly/NewStock/STSIZE"/>
-            <output path="$MessageAssembly1/JSON/spath('Data',2)/eventData/size"/>
+            <output path="$MessageAssembly1/JSON/spath('Data',2)/size"/>
         </move>
         <move>
             <input path="$MessageAssembly/NewStock/STCOLR"/>
-            <output path="$MessageAssembly1/JSON/spath('Data',2)/eventData/color"/>
+            <output path="$MessageAssembly1/JSON/spath('Data',2)/color"/>
         </move>
     </mappingDeclaration>
 </mappingRoot>
