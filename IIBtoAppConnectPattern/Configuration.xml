@@ -60,7 +60,50 @@
                 <schema/>
                 <referencedProjects>
                     <referencedProject>
-                        <referencedProjectId>Id1554b6856c4f441d7ec7cf8575f</referencedProjectId>
+                        <referencedProjectId>Id1555dc6e6ea15d92b046372258</referencedProjectId>
+                        <displayName>IIBtoAppConnectApplicationInterface</displayName>
+                        <enabled>true</enabled>
+                        <customProject>false</customProject>
+                        <prefixProjectName>true</prefixProjectName>
+                        <expression></expression>
+                        <referenceId></referenceId>
+                        <folders>
+                            <folder>
+                                <folderName>root</folderName>
+                                <relativePath></relativePath>
+                                <enabled>true</enabled>
+                                <files>
+                                    <file fileName=".project" isTransformOnGenerate="true" filePath="pattern/templates/IIBtoAppConnectApplicationInterface/" fileExtension=".data">
+                                        <fileName>.project</fileName>
+                                        <relativePath>.project</relativePath>
+                                        <enabled>true</enabled>
+                                        <targets/>
+                                    </file>
+                                    <file fileName="Event.xsd" isTransformOnGenerate="false" filePath="pattern/templates/IIBtoAppConnectApplicationInterface/" fileExtension=".data">
+                                        <fileName>Event.xsd</fileName>
+                                        <relativePath>Event.xsd</relativePath>
+                                        <enabled>false</enabled>
+                                        <targets/>
+                                    </file>
+                                    <file fileName="library.descriptor" isTransformOnGenerate="false" filePath="pattern/templates/IIBtoAppConnectApplicationInterface/" fileExtension=".data">
+                                        <fileName>library.descriptor</fileName>
+                                        <relativePath>library.descriptor</relativePath>
+                                        <enabled>true</enabled>
+                                        <targets/>
+                                    </file>
+                                    <file fileName="warehousedefinition.yaml" isTransformOnGenerate="false" filePath="pattern/templates/IIBtoAppConnectApplicationInterface/" fileExtension=".data">
+                                        <fileName>warehousedefinition.yaml</fileName>
+                                        <relativePath>warehousedefinition.yaml</relativePath>
+                                        <enabled>false</enabled>
+                                        <targets/>
+                                    </file>
+                                </files>
+                                <folders/>
+                            </folder>
+                        </folders>
+                    </referencedProject>
+                    <referencedProject>
+                        <referencedProjectId>Id1555dc6e6eac8bf28b7b8441004</referencedProjectId>
                         <displayName>IIBtoAppConnectWebhookLib</displayName>
                         <enabled>true</enabled>
                         <customProject>false</customProject>
@@ -103,7 +146,77 @@
                         </folders>
                     </referencedProject>
                     <referencedProject>
-                        <referencedProjectId>Id1554b6856f3485e1c759f0c95e2</referencedProjectId>
+                        <referencedProjectId>Id1555dc6e712391289219cb71f3b</referencedProjectId>
+                        <displayName>IIBtoAppConnectWebhookLib_unittest</displayName>
+                        <enabled>true</enabled>
+                        <customProject>false</customProject>
+                        <prefixProjectName>true</prefixProjectName>
+                        <expression></expression>
+                        <referenceId></referenceId>
+                        <folders>
+                            <folder>
+                                <folderName>root</folderName>
+                                <relativePath></relativePath>
+                                <enabled>true</enabled>
+                                <files>
+                                    <file fileName=".project" isTransformOnGenerate="true" filePath="pattern/templates/IIBtoAppConnectWebhookLib_unittest/" fileExtension=".data">
+                                        <fileName>.project</fileName>
+                                        <relativePath>.project</relativePath>
+                                        <enabled>true</enabled>
+                                        <targets/>
+                                    </file>
+                                    <file fileName="README.md" isTransformOnGenerate="false" filePath="pattern/templates/IIBtoAppConnectWebhookLib_unittest/" fileExtension=".data">
+                                        <fileName>README.md</fileName>
+                                        <relativePath>README.md</relativePath>
+                                        <enabled>true</enabled>
+                                        <targets/>
+                                    </file>
+                                    <file fileName="package.json" isTransformOnGenerate="false" filePath="pattern/templates/IIBtoAppConnectWebhookLib_unittest/" fileExtension=".data">
+                                        <fileName>package.json</fileName>
+                                        <relativePath>package.json</relativePath>
+                                        <enabled>true</enabled>
+                                        <targets/>
+                                    </file>
+                                    <file fileName="webhook-rest-api-test.js" isTransformOnGenerate="false" filePath="pattern/templates/IIBtoAppConnectWebhookLib_unittest/" fileExtension=".data">
+                                        <fileName>webhook-rest-api-test.js</fileName>
+                                        <relativePath>webhook-rest-api-test.js</relativePath>
+                                        <enabled>true</enabled>
+                                        <targets/>
+                                    </file>
+                                </files>
+                                <folders>
+                                    <folder>
+                                        <folderName>.settings</folderName>
+                                        <relativePath>.settings</relativePath>
+                                        <enabled>true</enabled>
+                                        <files>
+                                            <file fileName=".jsdtscope" isTransformOnGenerate="false" filePath="pattern/templates/IIBtoAppConnectWebhookLib_unittest/.settings" fileExtension=".data">
+                                                <fileName>.jsdtscope</fileName>
+                                                <relativePath>.settings/.jsdtscope</relativePath>
+                                                <enabled>true</enabled>
+                                                <targets/>
+                                            </file>
+                                            <file fileName="org.eclipse.wst.jsdt.ui.superType.container" isTransformOnGenerate="false" filePath="pattern/templates/IIBtoAppConnectWebhookLib_unittest/.settings" fileExtension=".data">
+                                                <fileName>org.eclipse.wst.jsdt.ui.superType.container</fileName>
+                                                <relativePath>.settings/org.eclipse.wst.jsdt.ui.superType.container</relativePath>
+                                                <enabled>true</enabled>
+                                                <targets/>
+                                            </file>
+                                            <file fileName="org.eclipse.wst.jsdt.ui.superType.name" isTransformOnGenerate="false" filePath="pattern/templates/IIBtoAppConnectWebhookLib_unittest/.settings" fileExtension=".data">
+                                                <fileName>org.eclipse.wst.jsdt.ui.superType.name</fileName>
+                                                <relativePath>.settings/org.eclipse.wst.jsdt.ui.superType.name</relativePath>
+                                                <enabled>true</enabled>
+                                                <targets/>
+                                            </file>
+                                        </files>
+                                        <folders/>
+                                    </folder>
+                                </folders>
+                            </folder>
+                        </folders>
+                    </referencedProject>
+                    <referencedProject>
+                        <referencedProjectId>Id1555dc6e7121a5f3a7a169b3e01</referencedProjectId>
                         <displayName>IIBtoAppConnectWebhookLibJava</displayName>
                         <enabled>true</enabled>
                         <customProject>false</customProject>
@@ -351,7 +464,7 @@
                         </folders>
                     </referencedProject>
                     <referencedProject>
-                        <referencedProjectId>Id1554b6856f34cffc3bb80959fa8</referencedProjectId>
+                        <referencedProjectId>Id1555dc6e712c1667df60ed80e41</referencedProjectId>
                         <displayName>IIBtoAppConnectWebhookLibTest</displayName>
                         <enabled>true</enabled>
                         <customProject>false</customProject>
@@ -388,77 +501,7 @@
                         </folders>
                     </referencedProject>
                     <referencedProject>
-                        <referencedProjectId>Id1554b685702aec6c32580d039</referencedProjectId>
-                        <displayName>IIBtoAppConnectWebhookLib_unittest</displayName>
-                        <enabled>true</enabled>
-                        <customProject>false</customProject>
-                        <prefixProjectName>true</prefixProjectName>
-                        <expression></expression>
-                        <referenceId></referenceId>
-                        <folders>
-                            <folder>
-                                <folderName>root</folderName>
-                                <relativePath></relativePath>
-                                <enabled>true</enabled>
-                                <files>
-                                    <file fileName=".project" isTransformOnGenerate="true" filePath="pattern/templates/IIBtoAppConnectWebhookLib_unittest/" fileExtension=".data">
-                                        <fileName>.project</fileName>
-                                        <relativePath>.project</relativePath>
-                                        <enabled>true</enabled>
-                                        <targets/>
-                                    </file>
-                                    <file fileName="README.md" isTransformOnGenerate="false" filePath="pattern/templates/IIBtoAppConnectWebhookLib_unittest/" fileExtension=".data">
-                                        <fileName>README.md</fileName>
-                                        <relativePath>README.md</relativePath>
-                                        <enabled>true</enabled>
-                                        <targets/>
-                                    </file>
-                                    <file fileName="package.json" isTransformOnGenerate="false" filePath="pattern/templates/IIBtoAppConnectWebhookLib_unittest/" fileExtension=".data">
-                                        <fileName>package.json</fileName>
-                                        <relativePath>package.json</relativePath>
-                                        <enabled>true</enabled>
-                                        <targets/>
-                                    </file>
-                                    <file fileName="webhook-rest-api-test.js" isTransformOnGenerate="false" filePath="pattern/templates/IIBtoAppConnectWebhookLib_unittest/" fileExtension=".data">
-                                        <fileName>webhook-rest-api-test.js</fileName>
-                                        <relativePath>webhook-rest-api-test.js</relativePath>
-                                        <enabled>true</enabled>
-                                        <targets/>
-                                    </file>
-                                </files>
-                                <folders>
-                                    <folder>
-                                        <folderName>.settings</folderName>
-                                        <relativePath>.settings</relativePath>
-                                        <enabled>true</enabled>
-                                        <files>
-                                            <file fileName=".jsdtscope" isTransformOnGenerate="false" filePath="pattern/templates/IIBtoAppConnectWebhookLib_unittest/.settings" fileExtension=".data">
-                                                <fileName>.jsdtscope</fileName>
-                                                <relativePath>.settings/.jsdtscope</relativePath>
-                                                <enabled>true</enabled>
-                                                <targets/>
-                                            </file>
-                                            <file fileName="org.eclipse.wst.jsdt.ui.superType.container" isTransformOnGenerate="false" filePath="pattern/templates/IIBtoAppConnectWebhookLib_unittest/.settings" fileExtension=".data">
-                                                <fileName>org.eclipse.wst.jsdt.ui.superType.container</fileName>
-                                                <relativePath>.settings/org.eclipse.wst.jsdt.ui.superType.container</relativePath>
-                                                <enabled>true</enabled>
-                                                <targets/>
-                                            </file>
-                                            <file fileName="org.eclipse.wst.jsdt.ui.superType.name" isTransformOnGenerate="false" filePath="pattern/templates/IIBtoAppConnectWebhookLib_unittest/.settings" fileExtension=".data">
-                                                <fileName>org.eclipse.wst.jsdt.ui.superType.name</fileName>
-                                                <relativePath>.settings/org.eclipse.wst.jsdt.ui.superType.name</relativePath>
-                                                <enabled>true</enabled>
-                                                <targets/>
-                                            </file>
-                                        </files>
-                                        <folders/>
-                                    </folder>
-                                </folders>
-                            </folder>
-                        </folders>
-                    </referencedProject>
-                    <referencedProject>
-                        <referencedProjectId>Id1554b6857027d7026ce235c4764</referencedProjectId>
+                        <referencedProjectId>Id1555dc6e72bbd2c282743086583</referencedProjectId>
                         <displayName>WarehouseNewStockEventToAppConnect</displayName>
                         <enabled>true</enabled>
                         <customProject>false</customProject>
@@ -593,6 +636,116 @@
                             </parameter>
                         </parameters>
                     </group>
+                    <group documentationRequired="true" tableRequired="true">
+                        <groupId>Id155549594c137e56d0145623894</groupId>
+                        <displayName>Application</displayName>
+                        <generateDocumentation>true</generateDocumentation>
+                        <description>Configure how this integration will be surfaced to App Connect as an application</description>
+                        <expand>false</expand>
+                        <visible>true</visible>
+                        <parameters>
+                            <parameter>
+                                <parameterId>ppInterfaceTitle</parameterId>
+                                <referenceId>Id155597bb57047152fa81dc630a8</referenceId>
+                                <defaultTranslated>true</defaultTranslated>
+                                <displayName>Interface title</displayName>
+                                <default>IIB Interface for App Connect</default>
+                                <waterMark>Enter your parameter value</waterMark>
+                                <mandatory>false</mandatory>
+                                <configurable>true</configurable>
+                                <visible>false</visible>
+                                <expression></expression>
+                                <parameterTargets/>
+                                <schema>
+                                    <maxOccurs>1</maxOccurs>
+                                    <minOccurs>0</minOccurs>
+                                    <type>xsd:string</type>
+                                </schema>
+                                <helpText></helpText>
+                                <continuation>false</continuation>
+                            </parameter>
+                            <parameter>
+                                <parameterId>ppInterfaceDescription</parameterId>
+                                <referenceId>Id155597c2b841339fa6f5e2dedaf</referenceId>
+                                <defaultTranslated>true</defaultTranslated>
+                                <displayName>Interface Description</displayName>
+                                <default>Generated by IIB pattern generator</default>
+                                <waterMark>Enter your parameter value</waterMark>
+                                <mandatory>false</mandatory>
+                                <configurable>true</configurable>
+                                <visible>false</visible>
+                                <expression></expression>
+                                <parameterTargets/>
+                                <schema>
+                                    <maxOccurs>1</maxOccurs>
+                                    <minOccurs>0</minOccurs>
+                                    <type>xsd:string</type>
+                                </schema>
+                                <helpText>&lt;p&gt;Describe the parameter here&lt;/p&gt;</helpText>
+                                <continuation>false</continuation>
+                            </parameter>
+                            <parameter>
+                                <parameterId>ppTriggerName</parameterId>
+                                <referenceId>Id1555980dd819a012b4f0b344d2f</referenceId>
+                                <defaultTranslated>false</defaultTranslated>
+                                <displayName>Trigger Name</displayName>
+                                <default></default>
+                                <waterMark>Enter the name of the event</waterMark>
+                                <mandatory>true</mandatory>
+                                <configurable>true</configurable>
+                                <visible>true</visible>
+                                <expression></expression>
+                                <parameterTargets/>
+                                <schema>
+                                    <maxOccurs>1</maxOccurs>
+                                    <minOccurs>1</minOccurs>
+                                    <type>xsd:string</type>
+                                </schema>
+                                <helpText>&lt;p&gt;This is the name that will be exposed to the App Connect user in the list of trigger to choose to listen to.&lt;/p&gt;</helpText>
+                                <continuation>false</continuation>
+                            </parameter>
+                            <parameter>
+                                <parameterId>ppTriggerDescription</parameterId>
+                                <referenceId>Id15559840686184fbed0c156495e</referenceId>
+                                <defaultTranslated>false</defaultTranslated>
+                                <displayName>Trigger Description</displayName>
+                                <default></default>
+                                <waterMark>A helpful description of the meaning of this trigger</waterMark>
+                                <mandatory>true</mandatory>
+                                <configurable>true</configurable>
+                                <visible>true</visible>
+                                <expression></expression>
+                                <parameterTargets/>
+                                <schema>
+                                    <maxOccurs>1</maxOccurs>
+                                    <minOccurs>1</minOccurs>
+                                    <type>xsd:string</type>
+                                </schema>
+                                <helpText>&lt;p&gt;Enter any text that will help the App Connect user to understand what would cause this trigger to fire.&lt;/p&gt;</helpText>
+                                <continuation>false</continuation>
+                            </parameter>
+                            <parameter>
+                                <parameterId>ppTriggerFields</parameterId>
+                                <referenceId>Id1555496ac8922947a6fa9c92ddb</referenceId>
+                                <defaultTranslated>false</defaultTranslated>
+                                <displayName>Trigger Fields</displayName>
+                                <default></default>
+                                <waterMark>The list of fields that are published when the trigger fires</waterMark>
+                                <mandatory>true</mandatory>
+                                <configurable>true</configurable>
+                                <visible>true</visible>
+                                <expression></expression>
+                                <parameterTargets/>
+                                <schema>
+                                    <maxOccurs>1</maxOccurs>
+                                    <minOccurs>1</minOccurs>
+                                    <type>Id15554964dc1e3029645a86d0328</type>
+                                </schema>
+                                <helpText>&lt;p&gt;The App Connect user can use data from the trigger to perform action on other applications.   Use this table to list the names of the data fields that will be available to the App Connect user to use.&lt;/p&gt;</helpText>
+                                <continuation>false</continuation>
+                            </parameter>
+                        </parameters>
+                    </group>
                 </groups>
                 <messages/>
                 <patternExtensions>
@@ -621,6 +774,58 @@
                                 <configuration>
                                     <key>outputPath</key>
                                     <value></value>
+                                </configuration>
+                            </extensionConfiguration>
+                        </generateExtension>
+                        <generateExtension>
+                            <extensionId>Id155548cff1d24f844f329d32d71</extensionId>
+                            <extensionClass>com.ibm.etools.mft.pattern.support.php.PhpPatternInstanceTransform</extensionClass>
+                            <extensionConfiguration>
+                                <configuration>
+                                    <key>class</key>
+                                    <value></value>
+                                </configuration>
+                                <configuration>
+                                    <key>pluginId</key>
+                                    <value>com.ibm.etools.mft.pattern.hybridintegration.appconnect.code</value>
+                                </configuration>
+                                <configuration>
+                                    <key>relativePath</key>
+                                    <value>templates/IIBtoAppConnectApplicationInterface/Event.xsd.php</value>
+                                </configuration>
+                                <configuration>
+                                    <key>projectName</key>
+                                    <value>IIBtoAppConnectApplicationInterface</value>
+                                </configuration>
+                                <configuration>
+                                    <key>outputPath</key>
+                                    <value>Event.xsd</value>
+                                </configuration>
+                            </extensionConfiguration>
+                        </generateExtension>
+                        <generateExtension>
+                            <extensionId>Id15558df6c2839ea0be5c420d489</extensionId>
+                            <extensionClass>com.ibm.etools.mft.pattern.support.php.PhpPatternInstanceTransform</extensionClass>
+                            <extensionConfiguration>
+                                <configuration>
+                                    <key>class</key>
+                                    <value></value>
+                                </configuration>
+                                <configuration>
+                                    <key>pluginId</key>
+                                    <value>com.ibm.etools.mft.pattern.hybridintegration.appconnect.code</value>
+                                </configuration>
+                                <configuration>
+                                    <key>relativePath</key>
+                                    <value>templates/IIBtoAppConnectApplicationInterface/warehousedefinition.yaml.php</value>
+                                </configuration>
+                                <configuration>
+                                    <key>projectName</key>
+                                    <value>IIBtoAppConnectApplicationInterface</value>
+                                </configuration>
+                                <configuration>
+                                    <key>outputPath</key>
+                                    <value>IIBtoAppConnectApplicationInterface/AppConnectDefinition.yaml</value>
                                 </configuration>
                             </extensionConfiguration>
                         </generateExtension>
@@ -681,7 +886,21 @@
                         </folder>
                     </folders>
                 </specification>
-                <patternTables/>
+                <patternTables>
+                    <patternTable>
+                        <tableId>Id15554964dc1e3029645a86d0328</tableId>
+                        <displayName>TriggerFields</displayName>
+                        <columns>
+                            <column>
+                                <columnId>fieldName</columnId>
+                                <referenceId>Id15554964dc120bedfa2f3f7f82d</referenceId>
+                                <displayName>Field Name</displayName>
+                                <mandatory>true</mandatory>
+                                <helpText></helpText>
+                            </column>
+                        </columns>
+                    </patternTable>
+                </patternTables>
             </pattern>
         </patterns>
         <buildOptions>

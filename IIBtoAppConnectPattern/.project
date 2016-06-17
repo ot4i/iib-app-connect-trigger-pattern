@@ -3,10 +3,11 @@
 	<name>IIBtoAppConnectPattern</name>
 	<comment></comment>
 	<projects>
+		<project>IIBtoAppConnectApplicationInterface</project>
 		<project>IIBtoAppConnectWebhookLib</project>
+		<project>IIBtoAppConnectWebhookLib_unittest</project>
 		<project>IIBtoAppConnectWebhookLibJava</project>
 		<project>IIBtoAppConnectWebhookLibTest</project>
-		<project>IIBtoAppConnectWebhookLib_unittest</project>
 		<project>WarehouseNewStockEventToAppConnect</project>
 	</projects>
 	<buildSpec>
