@@ -6,7 +6,7 @@
         <displayName>Pattern Plug-in</displayName>
         <package>com.ibm.etools.mft.pattern.hybridintegration.appconnect</package>
         <description>Plug-in created by the Pattern Authoring editor</description>
-        <version>1.0.0.0</version>
+        <version>1.0.0.3</version>
         <provider>IBM</provider>
         <categories>
             <category categoryKey="categories_Id155352075394ff280442952fce2" categoryPath="categories/Id155352075394ff280442952fce2" categoryResourcesPath="../.." categoryTemplatePath="categories/Id155352075394ff280442952fce2">
@@ -60,7 +60,7 @@
                 <schema/>
                 <referencedProjects>
                     <referencedProject>
-                        <referencedProjectId>Id1555dc6e6ea15d92b046372258</referencedProjectId>
+                        <referencedProjectId>Id155783401b4c6488a385d9474d4</referencedProjectId>
                         <displayName>IIBtoAppConnectApplicationInterface</displayName>
                         <enabled>true</enabled>
                         <customProject>false</customProject>
@@ -103,7 +103,7 @@
                         </folders>
                     </referencedProject>
                     <referencedProject>
-                        <referencedProjectId>Id1555dc6e6eac8bf28b7b8441004</referencedProjectId>
+                        <referencedProjectId>Id155783401b4b2004e418b4967ea</referencedProjectId>
                         <displayName>IIBtoAppConnectWebhookLib</displayName>
                         <enabled>true</enabled>
                         <customProject>false</customProject>
@@ -146,7 +146,7 @@
                         </folders>
                     </referencedProject>
                     <referencedProject>
-                        <referencedProjectId>Id1555dc6e712391289219cb71f3b</referencedProjectId>
+                        <referencedProjectId>Id155783401e3b6fe3814dc36914c</referencedProjectId>
                         <displayName>IIBtoAppConnectWebhookLib_unittest</displayName>
                         <enabled>true</enabled>
                         <customProject>false</customProject>
@@ -216,7 +216,7 @@
                         </folders>
                     </referencedProject>
                     <referencedProject>
-                        <referencedProjectId>Id1555dc6e7121a5f3a7a169b3e01</referencedProjectId>
+                        <referencedProjectId>Id155783401e395a29d971b23c2e9</referencedProjectId>
                         <displayName>IIBtoAppConnectWebhookLibJava</displayName>
                         <enabled>true</enabled>
                         <customProject>false</customProject>
@@ -464,7 +464,7 @@
                         </folders>
                     </referencedProject>
                     <referencedProject>
-                        <referencedProjectId>Id1555dc6e712c1667df60ed80e41</referencedProjectId>
+                        <referencedProjectId>Id155783401e3b9b814d23e521eaf</referencedProjectId>
                         <displayName>IIBtoAppConnectWebhookLibTest</displayName>
                         <enabled>true</enabled>
                         <customProject>false</customProject>
@@ -501,7 +501,7 @@
                         </folders>
                     </referencedProject>
                     <referencedProject>
-                        <referencedProjectId>Id1555dc6e72bbd2c282743086583</referencedProjectId>
+                        <referencedProjectId>Id155783401f225ff186b14b1115a</referencedProjectId>
                         <displayName>WarehouseNewStockEventToAppConnect</displayName>
                         <enabled>true</enabled>
                         <customProject>false</customProject>
