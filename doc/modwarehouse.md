@@ -13,7 +13,7 @@ For example, if I wanted to take an event from MQ and send it to App Connect the
 
 ![Warehouse IIB Message flow](./custom_messageflow.png)
 
-I would need to map the structure coming from MQ to a simple JSON structure. The structure coming from MQ could be anything from a simple XML document to a complex EDIFact message. The JSON structure in the map that it is mapped to must have a root element called `JSON` followed by a child element called `Data` that has a child called `eventData`. There needs to be one element beneath the eventData element for each field to send to App Connect. For the warehouse sample there were five fields: id, name, description, size and color. The map for this looks like:
+I would need to map the structure coming from MQ to a simple JSON structure. The structure coming from MQ could be anything from a simple XML document to a complex EDIFact message. The JSON structure in the map that it is mapped to must have a root element called `JSON` followed by a child element called `Data`. There needs to be one element beneath the Data element for each field to send to App Connect. For the warehouse sample there were five fields: id, name, description, size and color. The map for this looks like:
 ![Warehouse IIB Message flow](./warehouse_sample_map.png)
 The left half of the map is from the incoming data from MQ and the right is the JSON doc to send to App Connect. Your map will contain whatever data you want on the left and right as long as the JSON doc on the right conforms to the basic structure mentioned above.
 
