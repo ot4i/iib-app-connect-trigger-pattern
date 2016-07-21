@@ -31,7 +31,7 @@ Install and configure  [IBM Integration Bus](http://www.ibm.com/software/product
 
 The IIB projects provided have been authored using IIB 10 and will work with any version of IIB from v10 onwards.
 
-An online account with [IBM App Connect](http://www-03.ibm.com/software/products/sv/ibm-app-connect). A free version is available.
+An online account with [IBM App Connect](http://www-03.ibm.com/software/products/en/ibm-app-connect). A free version is available.
 
 
 

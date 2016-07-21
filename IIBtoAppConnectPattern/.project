@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>IIBtoAppConnectPattern</name>
+	<comment></comment>
+	<projects>
+		<project>IIBtoAppConnectApplicationInterface</project>
+		<project>IIBtoAppConnectWebhookLib</project>
+		<project>IIBtoAppConnectWebhookLib_unittest</project>
+		<project>IIBtoAppConnectWebhookLibJava</project>
+		<project>IIBtoAppConnectWebhookLibTest</project>
+		<project>WarehouseNewStockEventToAppConnect</project>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>com.ibm.etools.mft.pattern.capture.PatternBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>com.ibm.etools.mft.patternauthoringnature</nature>
+	</natures>
+</projectDescription>
