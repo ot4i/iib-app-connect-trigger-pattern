@@ -2,7 +2,7 @@
 Steps required to setup and run the Warehouse sample in IIB and App Connect.
 
 ## Introduction
-The Warehouse sample is very easy to setup and run. For a detailed explanation of the contents of the sample, see [What the Warehouse sample does](./doc/whatwarehouse.md).
+The Warehouse sample is very easy to setup and run. For a detailed explanation of the contents of the sample, see [What the Warehouse sample does](./whatwarehouse.md).
 
 To run the sample requires an IIB system and App Connect.
 For IIB there are two possibilities:
