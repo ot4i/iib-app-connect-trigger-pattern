@@ -35,7 +35,7 @@ An online account with [IBM App Connect](http://www-03.ibm.com/software/products
 
 
 
-##License and Authors
+## License and Authors
 Copyright 2016 IBM Corp. under the [Eclipse Public license](http://www.eclipse.org/legal/epl-v10.html).
 
 * Author:: John Reeve <jreeve@uk.ibm.com>
